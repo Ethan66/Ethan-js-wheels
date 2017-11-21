@@ -1,0 +1,137 @@
+*{
+  margin: 0; padding: 0;
+  &:after,&:before{
+    margin: 0; padding: 0;
+  }
+}
+ul,dl,ol,li,dd,dt{
+  list-style: none;
+}
+a{
+  text-decoration: none; color: #333;
+}
+a:hover{
+  text-decoration: none;
+}
+body{
+  font-family: "Microsoft YaHei", -apple-system, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  font-size: 14px;
+}
+$maxWidth: 1200px;$color: #409eff; $color1: #1f2f3d; $color2: #5e6d82;
+header{
+  height:80px; max-width: $maxWidth; margin: 0 auto;
+}
+main{
+  max-width: $maxWidth; margin: 0 auto; display: flex;
+  #nav{
+    width: 250px; height: 100vh; position: fixed; overflow-y: scroll; transition: all 1s;
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: rgba(0,0,0,0);
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 0;
+      background: transparent;
+    }
+    &:hover::-webkit-scrollbar-thumb{
+      background: hsla(220,8%,56%,.3);
+    }
+    dt{
+      font-weight: bold; font-size: 16px; line-height: 60px;
+    }
+    dd{
+     line-height: 40px;
+      a{
+        transition: all .5s;
+      }
+      &.active a{
+        color: $color;
+      }
+      &:hover a{
+        color: $color;
+      }
+      span{
+        padding-left: 10px;
+      }
+    }
+  }
+  #content{
+    padding-left: 250px; color: $color2; flex: 1;
+    .title{
+      margin-bottom: 20px;
+      h1{
+        font-weight: normal; font-size: 24px; color: $color1; line-height: 60px;
+      }
+    }
+    .demo{
+      .title2{
+        margin-bottom: 20px;
+        h2{
+          color: $color1; font-size: 20px; font-weight: normal; line-height: 60px;
+        }
+      }
+      .case{
+        border: 1px solid #ddd; border-radius: 4px; transition: .6s;
+        &.hover{
+          box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
+          .arrow{
+            background: #f9fafc;
+          }
+        }
+        ul{
+          padding: 20px;
+        }
+        .more{
+          border-top: 1px solid #ddd;
+          .code{
+            display: none;
+          }
+          .arrow{
+            text-align: center; padding: 10px 0; cursor: pointer;
+            i{
+              display: inline-block; content:""; width: 0; height: 0; border: 6px solid transparent; border-top-color: $color;
+              vertical-align: -3px; margin-right: 6px;
+            }
+            span{
+              opacity: 0; color: $color;
+            }
+          }
+        }
+      }
+    }
+    #Radio{
+      .e-radio{
+        position: relative; display: inline-block; margin-right: 10px;
+        input[type=radio]{
+          position: absolute; top: 3px; width: 14px; height: 14px; opacity: 0;
+        }
+        label{
+          position: relative; padding-left: 22px;
+          i{
+            display: inline-block; width: 14px; height: 14px; background: transparent; border: 1px solid #d8dce5;
+            text-align: center; border-radius: 50%;
+            box-sizing: border-box; position: absolute; top: 3px; left: 0;
+            transition: all .5s;
+            &:before{
+              display: inline-block; content: ""; width: 4px; height: 4px; background: transparent; border-radius: 50%;
+              vertical-align: 7px; transition: all .5s;
+            }
+          }
+        }
+        input:checked+label{
+          color: $color;
+        }
+        input:checked+label i{
+          background: $color; border-color: transparent;
+          &:before{
+            background: #fff;
+          }
+        }
+      }
+    }
+  }
+}
