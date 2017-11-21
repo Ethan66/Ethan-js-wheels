@@ -90,7 +90,33 @@ main {
       main #content .demo .case .more {
         border-top: 1px solid #ddd; }
         main #content .demo .case .more .code {
-          display: none; }
+          display: none;
+          position: relative;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #ddd; }
+          main #content .demo .case .more .code xmp {
+            width: 100%; }
+          main #content .demo .case .more .code .css {
+            display: -webkit-box;
+            width: 300px;
+            padding-left: 10px;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden; }
+          main #content .demo .case .more .code button {
+            position: absolute;
+            bottom: 8px;
+            left: 300px;
+            background: transparent;
+            border: 1px solid transparent;
+            color: #409eff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all .4s; }
+            main #content .demo .case .more .code button:hover {
+              border-color: #409eff;
+              color: #409eff; }
         main #content .demo .case .more .arrow {
           text-align: center;
           padding: 10px 0;
@@ -104,50 +130,55 @@ main {
             border-top-color: #409eff;
             vertical-align: -3px;
             margin-right: 6px; }
+            main #content .demo .case .more .arrow i.up {
+              border-top-color: transparent;
+              border-bottom-color: #409eff;
+              vertical-align: 2px; }
           main #content .demo .case .more .arrow span {
             opacity: 0;
             color: #409eff; }
-    main #content #Radio .e-radio {
-      position: relative;
+
+#Radio .e-radio {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px; }
+  #Radio .e-radio input[type=radio] {
+    position: absolute;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    opacity: 0; }
+  #Radio .e-radio label {
+    position: relative;
+    padding-left: 22px; }
+    #Radio .e-radio label i {
       display: inline-block;
-      margin-right: 10px; }
-      main #content #Radio .e-radio input[type=radio] {
-        position: absolute;
-        top: 3px;
-        width: 14px;
-        height: 14px;
-        opacity: 0; }
-      main #content #Radio .e-radio label {
-        position: relative;
-        padding-left: 22px; }
-        main #content #Radio .e-radio label i {
-          display: inline-block;
-          width: 14px;
-          height: 14px;
-          background: transparent;
-          border: 1px solid #d8dce5;
-          text-align: center;
-          border-radius: 50%;
-          box-sizing: border-box;
-          position: absolute;
-          top: 3px;
-          left: 0;
-          transition: all .5s; }
-          main #content #Radio .e-radio label i:before {
-            display: inline-block;
-            content: "";
-            width: 4px;
-            height: 4px;
-            background: transparent;
-            border-radius: 50%;
-            vertical-align: 7px;
-            transition: all .5s; }
-      main #content #Radio .e-radio input:checked + label {
-        color: #409eff; }
-      main #content #Radio .e-radio input:checked + label i {
-        background: #409eff;
-        border-color: transparent; }
-        main #content #Radio .e-radio input:checked + label i:before {
-          background: #fff; }
+      width: 14px;
+      height: 14px;
+      background: transparent;
+      border: 1px solid #d8dce5;
+      text-align: center;
+      border-radius: 50%;
+      box-sizing: border-box;
+      position: absolute;
+      top: 3px;
+      left: 0;
+      transition: all .5s; }
+      #Radio .e-radio label i:before {
+        display: inline-block;
+        content: "";
+        width: 4px;
+        height: 4px;
+        background: transparent;
+        border-radius: 50%;
+        vertical-align: 7px;
+        transition: all .5s; }
+  #Radio .e-radio input:checked + label {
+    color: #409eff; }
+  #Radio .e-radio input:checked + label i {
+    background: #409eff;
+    border-color: transparent; }
+    #Radio .e-radio input:checked + label i:before {
+      background: #fff; }
 
 /*# sourceMappingURL=index.css.map */

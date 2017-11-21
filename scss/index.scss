@@ -88,13 +88,32 @@ main{
         .more{
           border-top: 1px solid #ddd;
           .code{
-            display: none;
+            display: none; position: relative; padding-bottom: 10px; border-bottom: 1px solid #ddd;
+            xmp{
+              width: 100%;
+            }
+            .css{
+              display: -webkit-box; width: 300px; padding-left: 10px;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 1;
+              overflow: hidden;
+            }
+            button{
+              position: absolute; bottom: 8px; left: 300px; background: transparent; border: 1px solid transparent; color: $color;
+              padding: 2px 6px; border-radius: 4px; cursor: pointer; transition: all .4s;
+              &:hover{
+                border-color: $color; color: $color;
+              }
+            }
           }
           .arrow{
             text-align: center; padding: 10px 0; cursor: pointer;
             i{
               display: inline-block; content:""; width: 0; height: 0; border: 6px solid transparent; border-top-color: $color;
               vertical-align: -3px; margin-right: 6px;
+              &.up{
+                border-top-color: transparent; border-bottom-color: $color; vertical-align: 2px;
+              }
             }
             span{
               opacity: 0; color: $color;
@@ -103,34 +122,34 @@ main{
         }
       }
     }
-    #Radio{
-      .e-radio{
-        position: relative; display: inline-block; margin-right: 10px;
-        input[type=radio]{
-          position: absolute; top: 3px; width: 14px; height: 14px; opacity: 0;
+  }
+}
+#Radio{
+  .e-radio{
+    position: relative; display: inline-block; margin-right: 10px;
+    input[type=radio]{
+      position: absolute; top: 3px; width: 14px; height: 14px; opacity: 0;
+    }
+    label{
+      position: relative; padding-left: 22px;
+      i{
+        display: inline-block; width: 14px; height: 14px; background: transparent; border: 1px solid #d8dce5;
+        text-align: center; border-radius: 50%;
+        box-sizing: border-box; position: absolute; top: 3px; left: 0;
+        transition: all .5s;
+        &:before{
+          display: inline-block; content: ""; width: 4px; height: 4px; background: transparent; border-radius: 50%;
+          vertical-align: 7px; transition: all .5s;
         }
-        label{
-          position: relative; padding-left: 22px;
-          i{
-            display: inline-block; width: 14px; height: 14px; background: transparent; border: 1px solid #d8dce5;
-            text-align: center; border-radius: 50%;
-            box-sizing: border-box; position: absolute; top: 3px; left: 0;
-            transition: all .5s;
-            &:before{
-              display: inline-block; content: ""; width: 4px; height: 4px; background: transparent; border-radius: 50%;
-              vertical-align: 7px; transition: all .5s;
-            }
-          }
-        }
-        input:checked+label{
-          color: $color;
-        }
-        input:checked+label i{
-          background: $color; border-color: transparent;
-          &:before{
-            background: #fff;
-          }
-        }
+      }
+    }
+    input:checked+label{
+      color: $color;
+    }
+    input:checked+label i{
+      background: $color; border-color: transparent;
+      &:before{
+        background: #fff;
       }
     }
   }

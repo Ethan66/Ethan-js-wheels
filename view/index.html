@@ -64,9 +64,22 @@
                       </ul>
                       <div class="more">
                           <div class="code">
-                              <pre>
+                              <xmp>
+  <p class="e-radio">
+      <input type="radio" id="radio1" name="r" checked /><label for="radio1"><i></i>备选项</label>
+  </p>
+  <p class="e-radio">
+      <input type="radio" id="radio2" name="r" /><label for="radio2"><i></i>备选项</label>
+  </p>
 
-                              </pre>
+                              </xmp>
+                              <span class="css">.e-radio{position:relative;display:inline-block;margin-right:10px}.e-radio input[type=radio]{position:absolute;top:3px;width:14px;height:14px;opacity:0}
+.e-radio label{position:relative;padding-left:22px}
+.e-radio label i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;border-radius:50%;box-sizing:border-box;
+ position:absolute;top:3px;left:0;transition:all .5s}
+.e-radio label i:before{display:inline-block;content:"";width:4px;height:4px;background:transparent;border-radius:50%;vertical-align:7px;transition:all .5s}
+.e-radio input:checked+label{color:#409eff}.e-radio input:checked+label i{background:#409eff;border-color:transparent}
+.e-radio input:checked+label i:before{background:#fff}</span><button class="copy">复制样式</button>
                           </div>
                           <div class="arrow">
                               <i></i>
