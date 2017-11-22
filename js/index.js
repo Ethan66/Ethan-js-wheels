@@ -64,6 +64,7 @@ var showOrHideCode=(function(){
             self.$arrow.on("click",function(){
                 self.$code.slideToggle(function(){
                     if($(this).css("display")=="none"){
+                        self.$arrow.find("i").removeClass("up")
                         self.$arrow.animate({'text-indent':2*self.spanWidth},200)
                         self.$arrSpan.animate({opacity:0},200)
                     }
@@ -77,12 +78,9 @@ var showOrHideCode=(function(){
             })
         },
         copyCss:function(ct){
-             console.log(ct)
-            // var Url2=document.getElementById("biao1");
             ct.select(); // 选择对象
-             document.execCommand("Copy"); // 执行浏览器复制命令
-             alert("已复制好，可贴粘。");
-
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            alert("已复制好，可贴粘。");
         }
     }
     return {

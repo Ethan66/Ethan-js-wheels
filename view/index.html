@@ -41,53 +41,256 @@
           </dl>
       </div>
       <div id="content">
+          <div class="title">
+              <h1>写在前面</h1>
+              <span>关于本UI的使用情况</span>
+          </div>
+          <div class="writeFirst">
+              <p>
+                  1、本UI是为了把常用组件，标签的默认样式进行设置，用到了伪元素和兄弟级选择器，支持IE8以上，低版本不考虑。
+              </p>
+              <p>
+                  2、本UI暂时使用的是jquery实现。
+              </p>
+              <p>
+                  3、组件样式为scss,想要转换请访问<a target="_blank" href="https://sass2css.herokuapp.com/">sass2css.herokuapp.com</a>。(http://css2sass.herokuapp.com/)
+              </p>
+              <p>
+                  4、复制的样式开头为$maxWidth: 1200px;$color: #409eff; $color1: #1f2f3d; $color2: #5e6d82;是SCSS定义变量，假如直接使用SCSS不转CSS，记得删除
+              </p>
+              <p>
+                  5、本UI有个样式重置，不然只拷贝样式会出错：*{margin:0;padding:0;box-sizing:border-box}*:after,*:before{margin:0;padding:0;box-sizing:border-box}body{font-family:"Microsoft YaHei";font-size:14px}
+              </p>
+          </div>
           <div id="Radio">
               <div class="title">
                   <h1>Radio 单选框</h1>
                   <span>在一组备选项中进行单选</span>
               </div>
-              <div class="demo">
-                  <div class="title2">
-                      <h2>基础用法</h2>
-                      <span>由于选项默认可见，不宜过多，若选项过多，建议使用 Select 选择器。</span>
-                  </div>
-                  <div class="case">
-                      <ul>
-                          <li>
-                              <p class="e-radio">
-                                  <input type="radio" id="radio1" name="r" checked /><label for="radio1"><i></i>备选项</label>
-                              </p>
-                              <p class="e-radio">
-                                  <input type="radio" id="radio2" name="r" /><label for="radio2"><i></i>备选项</label>
-                              </p>
-                          </li>
-                      </ul>
-                      <div class="more">
-                          <div class="code">
-                              <xmp>
+              <ul class="demo">
+                  <li>
+                      <div class="title2">
+                          <h2>基础用法</h2>
+                          <span>由于选项默认可见，不宜过多，若选项过多，建议使用 Select 选择器。</span>
+                      </div>
+                      <div class="case">
+                          <ul>
+                              <li>
+                                  <p class="e-radio">
+                                      <input type="radio" id="radio1" name="r" checked value="1" /><label for="radio1"><i></i>备选项</label>
+                                  </p>
+                                  <p class="e-radio">
+                                      <input type="radio" id="radio2" name="r" value="2" /><label for="radio2"><i></i>备选项</label>
+                                  </p>
+                              </li>
+                          </ul>
+                          <div class="more">
+                              <div class="code">
+                                  <xmp>
   <p class="e-radio">
-      <input type="radio" id="radio1" name="r" checked /><label for="radio1"><i></i>备选项</label>
+      <input type="radio" id="radio1" name="r" value="1" checked /><label for="radio1"><i></i>备选项</label>
   </p>
   <p class="e-radio">
-      <input type="radio" id="radio2" name="r" /><label for="radio2"><i></i>备选项</label>
+      <input type="radio" id="radio2" name="r" value="2" /><label for="radio2"><i></i>备选项</label>
   </p>
-
-                              </xmp>
-                              <span class="css">.e-radio{position:relative;display:inline-block;margin-right:10px}.e-radio input[type=radio]{position:absolute;top:3px;width:14px;height:14px;opacity:0}
-.e-radio label{position:relative;padding-left:22px}
-.e-radio label i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;border-radius:50%;box-sizing:border-box;
- position:absolute;top:3px;left:0;transition:all .5s}
-.e-radio label i:before{display:inline-block;content:"";width:4px;height:4px;background:transparent;border-radius:50%;vertical-align:7px;transition:all .5s}
-.e-radio input:checked+label{color:#409eff}.e-radio input:checked+label i{background:#409eff;border-color:transparent}
-.e-radio input:checked+label i:before{background:#fff}</span><button class="copy">复制样式</button>
-                          </div>
-                          <div class="arrow">
-                              <i></i>
-                              <span>显示代码</span>
+                                  </xmp>
+                                  <textarea class="css">$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-radio{position:relative;display:inline-block;margin-right:10px;input[type=radio]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;border-radius:50%;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;&:before{display:inline-block;content:"";width:4px;height:4px;background:transparent;border-radius:50%;vertical-align:7px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{background:#fff}}}</textarea>
+                                  <button class="copy">复制SCSS样式</button>
+                              </div>
+                              <div class="arrow">
+                                  <i></i>
+                                  <span>显示代码</span>
+                              </div>
                           </div>
                       </div>
-                  </div>
+                  </li>
+                  <li>
+                      <div class="title2">
+                          <h2>禁用状态</h2>
+                          <span>单选框不可用的状态。</span>
+                      </div>
+                      <div class="case">
+                          <ul>
+                              <li>
+                                  <p class="e-radio">
+                                      <input type="radio" id="radio3" name="r1" value="1" checked disabled /><label for="radio3"><i></i>备选项</label>
+                                  </p>
+                                  <p class="e-radio">
+                                      <input type="radio" id="radio4" name="r1" value="2" disabled /><label for="radio4"><i></i>备选项</label>
+                                  </p>
+                              </li>
+                          </ul>
+                          <div class="more">
+                              <div class="code">
+                                  <xmp>
+  <p class="e-radio">
+      <input type="radio" id="radio3" name="r1" value="1" checked disabled /><label for="radio4"><i></i>备选项</label>
+  </p>
+  <p class="e-radio">
+      <input type="radio" id="radio4" name="r1" value="2" disabled /><label for="radio4"><i></i>备选项</label>
+  </p>
+                                  </xmp>
+                                  <textarea class="css">$maxWidth: 1200px;$color: #409eff; $color1: #1f2f3d; $color2: #5e6d82;.e-radio{position:relative;display:inline-block;margin-right:10px;input[type=radio]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;border-radius:50%;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;&:before{display:inline-block;content:"";width:4px;height:4px;background:transparent;border-radius:50%;vertical-align:7px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{background:#fff}}input:disabled+label{color:#b4bccc!important}input:disabled+label i{background:transparent!important;border-color:#b4bccc!important}input:checked:disabled+label i{&:before{background:#b4bccc}}}</textarea>
+                                  <button class="copy">复制SCSS样式</button>
+                              </div>
+                              <div class="arrow">
+                                  <i></i>
+                                  <span>显示代码</span>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="title2">
+                          <h2>带有边框</h2>
+                      </div>
+                      <div class="case">
+                          <ul>
+                              <li>
+                                  <p class="e-radio border">
+                                      <input type="radio" id="radio5" name="r2" value="1" checked /><label for="radio5"><i></i>备选项</label>
+                                  </p>
+                                  <p class="e-radio border">
+                                      <input type="radio" id="radio6" name="r2" value="2" /><label for="radio6"><i></i>备选项</label>
+                                  </p>
+                              </li>
+                          </ul>
+                          <div class="more">
+                              <div class="code">
+                                  <xmp>
+  <p class="e-radio border">
+      <input type="radio" id="radio5" name="r2" value="1" checked /><label for="radio5"><i></i>备选项</label>
+  </p>
+  <p class="e-radio border">
+      <input type="radio" id="radio6" name="r2" value="2" /><label for="radio6"><i></i>备选项</label>
+  </p>
+                                  </xmp>
+                                  <textarea class="css">$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-radio{position:relative;display:inline-block;margin-right:10px;input[type=radio]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;border-radius:50%;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;&:before{display:inline-block;content:"";width:4px;height:4px;background:transparent;border-radius:50%;vertical-align:7px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{background:#fff}}input:disabled+label{color:#b4bccc!important}input:disabled+label i{background:transparent!important;border-color:#b4bccc!important}input:checked:disabled+label i{&:before{background:#b4bccc}}&.border{input{left:14px}label{display:block;border:1px solid #ddd;padding:8px 18px 8px 35px;border-radius:4px;i{top:11px;left:13px}}input:checked+label{border-color:$color}}}</textarea>
+                                  <button class="copy">复制SCSS样式</button>
+                              </div>
+                              <div class="arrow">
+                                  <i></i>
+                                  <span>显示代码</span>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+          <div id="Checkbox">
+              <div class="title">
+                  <h1>Checkbox 多选框</h1>
+                  <span>一组备选项中进行多选</span>
               </div>
+              <ul class="demo">
+                  <li>
+                      <div class="title2">
+                          <h2>基础用法</h2>
+                          <span>单独使用可以表示两种状态之间的切换，写在标签中的内容为 checkbox 按钮后的介绍。</span>
+                      </div>
+                      <div class="case">
+                          <ul>
+                              <li>
+                                  <p class="e-checkbox">
+                                      <input type="checkbox" id="checkbox1" name="c" checked value="1" /><label for="checkbox1"><i></i>备选项</label>
+                                  </p>
+                                  <p class="e-checkbox">
+                                      <input type="checkbox" id="checkbox2" name="c" value="2" /><label for="checkbox2"><i></i>备选项</label>
+                                  </p>
+                              </li>
+                          </ul>
+                          <div class="more">
+                              <div class="code">
+                                  <xmp>
+  <p class="e-checkbox">
+      <input type="checkbox" id="checkbox1" name="c" checked value="1" /><label for="checkbox1"><i></i>备选项</label>
+  </p>
+  <p class="e-checkbox">
+      <input type="checkbox" id="checkbox2" name="c" value="2" /><label for="checkbox2"><i></i>备选项</label>
+  </p>
+                                  </xmp>
+                                  <textarea class="css">$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-checkbox{position:relative;display:inline-block;margin-right:10px;input[type=checkbox]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;&:before{display:inline-block;content:"";width:10px;height:5px;background:transparent;border:1px solid transparent;transform:rotate(-45deg);vertical-align:8px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{border-left-color:#fff;border-bottom-color:#fff}}}</textarea>
+                                  <button class="copy">复制SCSS样式</button>
+                              </div>
+                              <div class="arrow">
+                                  <i></i>
+                                  <span>显示代码</span>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="title2">
+                          <h2>禁用状态</h2>
+                          <span>多选框不可用状态。</span>
+                      </div>
+                      <div class="case">
+                          <ul>
+                              <li>
+                                  <p class="e-checkbox">
+                                      <input type="checkbox" id="checkbox3" name="c2" disabled checked value="1" /><label for="checkbox3"><i></i>备选项</label>
+                                  </p>
+                                  <p class="e-checkbox">
+                                      <input type="checkbox" id="checkbox4" name="c2" disabled value="2" /><label for="checkbox4"><i></i>备选项</label>
+                                  </p>
+                              </li>
+                          </ul>
+                          <div class="more">
+                              <div class="code">
+                                  <xmp>
+  <p class="e-checkbox">
+      <input type="checkbox" id="checkbox3" name="c2" disabled checked value="1" /><label for="checkbox3"><i></i>备选项</label>
+  </p>
+  <p class="e-checkbox">
+      <input type="checkbox" id="checkbox4" name="c2" disabled value="2" /><label for="checkbox4"><i></i>备选项</label>
+  </p>
+                                  </xmp>
+                                  <textarea class="css">$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-checkbox{position:relative;display:inline-block;margin-right:10px;input[type=checkbox]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;border-radius:2px;&:before{display:inline-block;content:"";width:10px;height:5px;background:transparent;border:1px solid transparent;transform:rotate(-45deg);vertical-align:8px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{border-left-color:#fff;border-bottom-color:#fff}}input:disabled+label{color:#b4bccc!important}input:disabled+label i{background:#edf2fc!important;border-color:#d8dce5!important}input:checked:disabled+label i{&:before{border-left-color:#b4bccc;border-bottom-color:#b4bccc}}}</textarea>
+                                  <button class="copy">复制SCSS样式</button>
+                              </div>
+                              <div class="arrow">
+                                  <i></i>
+                                  <span>显示代码</span>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="title2">
+                          <h2>带有边框</h2>
+                      </div>
+                      <div class="case">
+                          <ul>
+                              <li>
+                                  <p class="e-checkbox border">
+                                      <input type="checkbox" id="checkbox5" name="c3" checked value="1" /><label for="checkbox5"><i></i>备选项</label>
+                                  </p>
+                                  <p class="e-checkbox border">
+                                      <input type="checkbox" id="checkbox6" name="c3" value="2" /><label for="checkbox6"><i></i>备选项</label>
+                                  </p>
+                              </li>
+                          </ul>
+                          <div class="more">
+                              <div class="code">
+                                  <xmp>
+  <p class="e-checkbox border">
+      <input type="checkbox" id="checkbox5" name="c3" checked value="1" /><label for="checkbox5"><i></i>备选项</label>
+  </p>
+  <p class="e-checkbox border">
+      <input type="checkbox" id="checkbox6" name="c3" value="2" /><label for="checkbox6"><i></i>备选项</label>
+  </p>
+                                  </xmp>
+                                  <textarea class="css">$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-checkbox{position:relative;display:inline-block;margin-right:10px;input[type=checkbox]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;border-radius:2px;&:before{display:inline-block;content:"";width:10px;height:5px;background:transparent;border:1px solid transparent;transform:rotate(-45deg);vertical-align:8px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{border-left-color:#fff;border-bottom-color:#fff}}input:disabled+label{color:#b4bccc!important}input:disabled+label i{background:#edf2fc!important;border-color:#d8dce5!important}input:checked:disabled+label i{&:before{border-left-color:#b4bccc;border-bottom-color:#b4bccc}}&.border{input{left:14px}label{display:block;border:1px solid #ddd;padding:8px 18px 8px 35px;border-radius:4px;i{top:11px;left:13px}}input:checked+label{border-color:$color}}}</textarea>
+                                  <button class="copy">复制SCSS样式</button>
+                              </div>
+                              <div class="arrow">
+                                  <i></i>
+                                  <span>显示代码</span>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
           </div>
       </div>
   </main>

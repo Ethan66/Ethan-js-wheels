@@ -1,9 +1,11 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  box-sizing: border-box; }
   *:after, *:before {
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    box-sizing: border-box; }
 
 ul, dl, ol, li, dd, dt {
   list-style: none; }
@@ -70,73 +72,79 @@ main {
         font-size: 24px;
         color: #1f2f3d;
         line-height: 60px; }
-    main #content .demo .title2 {
+    main #content .writeFirst {
+      padding-left: 25px;
+      margin-bottom: 10px; }
+      main #content .writeFirst p {
+        padding-bottom: 10px;
+        text-indent: -25px; }
+      main #content .writeFirst a {
+        color: #409eff; }
+        main #content .writeFirst a:hover {
+          text-decoration: underline; }
+    main #content .demo {
       margin-bottom: 20px; }
-      main #content .demo .title2 h2 {
-        color: #1f2f3d;
-        font-size: 20px;
-        font-weight: normal;
-        line-height: 60px; }
-    main #content .demo .case {
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      transition: .6s; }
-      main #content .demo .case.hover {
-        box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5); }
-        main #content .demo .case.hover .arrow {
-          background: #f9fafc; }
-      main #content .demo .case ul {
-        padding: 20px; }
-      main #content .demo .case .more {
-        border-top: 1px solid #ddd; }
-        main #content .demo .case .more .code {
-          display: none;
-          position: relative;
-          padding-bottom: 10px;
-          border-bottom: 1px solid #ddd; }
-          main #content .demo .case .more .code xmp {
-            width: 100%; }
-          main #content .demo .case .more .code .css {
-            display: -webkit-box;
-            width: 300px;
-            padding-left: 10px;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1;
-            overflow: hidden; }
-          main #content .demo .case .more .code button {
-            position: absolute;
-            bottom: 8px;
-            left: 300px;
-            background: transparent;
-            border: 1px solid transparent;
-            color: #409eff;
-            padding: 2px 6px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all .4s; }
-            main #content .demo .case .more .code button:hover {
-              border-color: #409eff;
+      main #content .demo .title2 {
+        margin-bottom: 20px; }
+        main #content .demo .title2 h2 {
+          color: #1f2f3d;
+          font-size: 20px;
+          font-weight: normal;
+          line-height: 60px; }
+      main #content .demo .case {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: .6s; }
+        main #content .demo .case.hover {
+          box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5); }
+          main #content .demo .case.hover .arrow {
+            background: #f9fafc; }
+        main #content .demo .case ul {
+          padding: 20px; }
+        main #content .demo .case .more {
+          border-top: 1px solid #ddd; }
+          main #content .demo .case .more .code {
+            display: none;
+            position: relative;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd; }
+            main #content .demo .case .more .code xmp {
+              width: 100%; }
+            main #content .demo .case .more .code .css {
+              opacity: 0;
+              width: 0; }
+            main #content .demo .case .more .code button {
+              margin-left: 10px;
+              background: transparent;
+              border: 1px solid transparent;
+              color: #409eff;
+              padding: 2px 6px;
+              border-radius: 4px;
+              cursor: pointer;
+              transition: all .4s; }
+              main #content .demo .case .more .code button:hover {
+                border-color: #409eff;
+                color: #409eff; }
+          main #content .demo .case .more .arrow {
+            text-align: center;
+            padding: 10px 0;
+            cursor: pointer; }
+            main #content .demo .case .more .arrow i {
+              display: inline-block;
+              content: "";
+              width: 0;
+              height: 0;
+              border: 6px solid transparent;
+              border-top-color: #409eff;
+              vertical-align: -3px;
+              margin-right: 6px; }
+              main #content .demo .case .more .arrow i.up {
+                border-top-color: transparent;
+                border-bottom-color: #409eff;
+                vertical-align: 2px; }
+            main #content .demo .case .more .arrow span {
+              opacity: 0;
               color: #409eff; }
-        main #content .demo .case .more .arrow {
-          text-align: center;
-          padding: 10px 0;
-          cursor: pointer; }
-          main #content .demo .case .more .arrow i {
-            display: inline-block;
-            content: "";
-            width: 0;
-            height: 0;
-            border: 6px solid transparent;
-            border-top-color: #409eff;
-            vertical-align: -3px;
-            margin-right: 6px; }
-            main #content .demo .case .more .arrow i.up {
-              border-top-color: transparent;
-              border-bottom-color: #409eff;
-              vertical-align: 2px; }
-          main #content .demo .case .more .arrow span {
-            opacity: 0;
-            color: #409eff; }
 
 #Radio .e-radio {
   position: relative;
@@ -180,5 +188,89 @@ main {
     border-color: transparent; }
     #Radio .e-radio input:checked + label i:before {
       background: #fff; }
+  #Radio .e-radio input:disabled + label {
+    color: #b4bccc !important; }
+  #Radio .e-radio input:disabled + label i {
+    background: transparent !important;
+    border-color: #b4bccc !important; }
+  #Radio .e-radio input:checked:disabled + label i:before {
+    background: #b4bccc; }
+  #Radio .e-radio.border input {
+    left: 14px; }
+  #Radio .e-radio.border label {
+    display: block;
+    border: 1px solid #ddd;
+    padding: 8px 18px 8px 35px;
+    border-radius: 4px; }
+    #Radio .e-radio.border label i {
+      top: 11px;
+      left: 13px; }
+  #Radio .e-radio.border input:checked + label {
+    border-color: #409eff; }
+
+#Checkbox .e-checkbox {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px; }
+  #Checkbox .e-checkbox input[type=checkbox] {
+    position: absolute;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    opacity: 0; }
+  #Checkbox .e-checkbox label {
+    position: relative;
+    padding-left: 22px; }
+    #Checkbox .e-checkbox label i {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background: transparent;
+      border: 1px solid #d8dce5;
+      text-align: center;
+      box-sizing: border-box;
+      position: absolute;
+      top: 3px;
+      left: 0;
+      transition: all .5s;
+      border-radius: 2px; }
+      #Checkbox .e-checkbox label i:before {
+        display: inline-block;
+        content: "";
+        width: 10px;
+        height: 5px;
+        background: transparent;
+        border: 1px solid transparent;
+        transform: rotate(-45deg);
+        vertical-align: 8px;
+        transition: all .5s; }
+  #Checkbox .e-checkbox input:checked + label {
+    color: #409eff; }
+  #Checkbox .e-checkbox input:checked + label i {
+    background: #409eff;
+    border-color: transparent; }
+    #Checkbox .e-checkbox input:checked + label i:before {
+      border-left-color: #fff;
+      border-bottom-color: #fff; }
+  #Checkbox .e-checkbox input:disabled + label {
+    color: #b4bccc !important; }
+  #Checkbox .e-checkbox input:disabled + label i {
+    background: #edf2fc !important;
+    border-color: #d8dce5 !important; }
+  #Checkbox .e-checkbox input:checked:disabled + label i:before {
+    border-left-color: #b4bccc;
+    border-bottom-color: #b4bccc; }
+  #Checkbox .e-checkbox.border input {
+    left: 14px; }
+  #Checkbox .e-checkbox.border label {
+    display: block;
+    border: 1px solid #ddd;
+    padding: 8px 18px 8px 35px;
+    border-radius: 4px; }
+    #Checkbox .e-checkbox.border label i {
+      top: 11px;
+      left: 13px; }
+  #Checkbox .e-checkbox.border input:checked + label {
+    border-color: #409eff; }
 
 /*# sourceMappingURL=index.css.map */
