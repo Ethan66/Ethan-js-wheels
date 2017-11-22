@@ -31,7 +31,7 @@ $('#content').on("click",".demo .arrow",function(){
         }
     })
 })*/
-var showOrHideCode=(function(){
+var ShowOrHideCode=(function(){
     var showOrHideCode1=function($ct){
         this.init($ct)
         this.bind()
@@ -91,5 +91,31 @@ var showOrHideCode=(function(){
         }
     }
 })()
-showOrHideCode.init($("#content .demo .case"))
+ShowOrHideCode.init($("#content .demo .case"))
+
+
+var Nav=(function(){
+    var Nav1=function($ct){
+        this.init($ct)
+        this.bind()
+    }
+    Nav1.prototype={
+        init:function($ct){
+            this.$ct=$ct
+            this.dd=$ct.find("dd")
+            
+        },
+        bind:function(){
+
+        }
+    }
+    return {
+        init:function($ct){
+            $ct.each(function(index,value){
+                new Nav1($(this))
+            })
+        }
+    }
+})()
+Nav.init($("#nav"))
 

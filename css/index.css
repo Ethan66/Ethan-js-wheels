@@ -28,6 +28,9 @@ body {
   fill: currentColor;
   overflow: hidden; }
 
+.none {
+  display: none; }
+
 header {
   height: 80px;
   max-width: 1200px;
