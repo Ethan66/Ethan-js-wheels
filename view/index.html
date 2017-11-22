@@ -95,7 +95,7 @@
       <input type="radio" id="radio2" name="r" value="2" /><label for="radio2"><i></i>备选项</label>
   </p>
                                   </xmp>
-                                  <textarea class="css">$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-radio{position:relative;display:inline-block;margin-right:10px;input[type=radio]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;border-radius:50%;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;&:before{display:inline-block;content:"";width:4px;height:4px;background:transparent;border-radius:50%;vertical-align:7px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{background:#fff}}}</textarea>
+                                  <textarea class="css">$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;.e-radio{position:relative;display:inline-block;margin-right:10px;input[type=radio]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;border-radius:50%;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;&:before{display:inline-block;content:"";width:4px;height:4px;background:transparent;border-radius:50%;vertical-align:7px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{background:#fff}}&.e-disabled{input:disabled+label{color:#b4bccc}input:disabled+label i{background:transparent;border-color:#b4bccc}input:checked:disabled+label i{&:before{background:#b4bccc}}}&.e-border{input{left:14px}label{display:block;border:1px solid #ddd;padding:8px 18px 8px 35px;border-radius:4px;i{top:11px;left:13px}}input:checked+label{border-color:$color}}}</textarea>
                                   <button class="copy">复制SCSS样式</button>
                               </div>
                               <div class="arrow">
@@ -113,10 +113,10 @@
                       <div class="case">
                           <ul>
                               <li>
-                                  <p class="e-radio">
+                                  <p class="e-radio e-disabled">
                                       <input type="radio" id="radio3" name="r1" value="1" checked disabled /><label for="radio3"><i></i>备选项</label>
                                   </p>
-                                  <p class="e-radio">
+                                  <p class="e-radio e-disabled">
                                       <input type="radio" id="radio4" name="r1" value="2" disabled /><label for="radio4"><i></i>备选项</label>
                                   </p>
                               </li>
@@ -124,15 +124,13 @@
                           <div class="more">
                               <div class="code">
                                   <xmp>
-  <p class="e-radio">
+  <p class="e-radio e-disabled">
       <input type="radio" id="radio3" name="r1" value="1" checked disabled /><label for="radio4"><i></i>备选项</label>
   </p>
-  <p class="e-radio">
+  <p class="e-radio e-disabled">
       <input type="radio" id="radio4" name="r1" value="2" disabled /><label for="radio4"><i></i>备选项</label>
   </p>
                                   </xmp>
-                                  <textarea class="css">$maxWidth: 1200px;$color: #409eff; $color1: #1f2f3d; $color2: #5e6d82;.e-radio{position:relative;display:inline-block;margin-right:10px;input[type=radio]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;border-radius:50%;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;&:before{display:inline-block;content:"";width:4px;height:4px;background:transparent;border-radius:50%;vertical-align:7px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{background:#fff}}input:disabled+label{color:#b4bccc!important}input:disabled+label i{background:transparent!important;border-color:#b4bccc!important}input:checked:disabled+label i{&:before{background:#b4bccc}}}</textarea>
-                                  <button class="copy">复制SCSS样式</button>
                               </div>
                               <div class="arrow">
                                   <i></i>
@@ -148,10 +146,10 @@
                       <div class="case">
                           <ul>
                               <li>
-                                  <p class="e-radio border">
+                                  <p class="e-radio e-border">
                                       <input type="radio" id="radio5" name="r2" value="1" checked /><label for="radio5"><i></i>备选项</label>
                                   </p>
-                                  <p class="e-radio border">
+                                  <p class="e-radio e-border">
                                       <input type="radio" id="radio6" name="r2" value="2" /><label for="radio6"><i></i>备选项</label>
                                   </p>
                               </li>
@@ -159,15 +157,13 @@
                           <div class="more">
                               <div class="code">
                                   <xmp>
-  <p class="e-radio border">
+  <p class="e-radio e-border">
       <input type="radio" id="radio5" name="r2" value="1" checked /><label for="radio5"><i></i>备选项</label>
   </p>
-  <p class="e-radio border">
+  <p class="e-radio e-border">
       <input type="radio" id="radio6" name="r2" value="2" /><label for="radio6"><i></i>备选项</label>
   </p>
                                   </xmp>
-                                  <textarea class="css">$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-radio{position:relative;display:inline-block;margin-right:10px;input[type=radio]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;border-radius:50%;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;&:before{display:inline-block;content:"";width:4px;height:4px;background:transparent;border-radius:50%;vertical-align:7px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{background:#fff}}input:disabled+label{color:#b4bccc!important}input:disabled+label i{background:transparent!important;border-color:#b4bccc!important}input:checked:disabled+label i{&:before{background:#b4bccc}}&.border{input{left:14px}label{display:block;border:1px solid #ddd;padding:8px 18px 8px 35px;border-radius:4px;i{top:11px;left:13px}}input:checked+label{border-color:$color}}}</textarea>
-                                  <button class="copy">复制SCSS样式</button>
                               </div>
                               <div class="arrow">
                                   <i></i>
@@ -228,10 +224,10 @@
                       <div class="case">
                           <ul>
                               <li>
-                                  <p class="e-checkbox">
+                                  <p class="e-checkbox e-disabled">
                                       <input type="checkbox" id="checkbox3" name="c2" disabled checked value="1" /><label for="checkbox3"><i></i>备选项</label>
                                   </p>
-                                  <p class="e-checkbox">
+                                  <p class="e-checkbox e-disabled">
                                       <input type="checkbox" id="checkbox4" name="c2" disabled value="2" /><label for="checkbox4"><i></i>备选项</label>
                                   </p>
                               </li>
@@ -239,15 +235,13 @@
                           <div class="more">
                               <div class="code">
                                   <xmp>
-  <p class="e-checkbox">
+  <p class="e-checkbox e-disabled">
       <input type="checkbox" id="checkbox3" name="c2" disabled checked value="1" /><label for="checkbox3"><i></i>备选项</label>
   </p>
-  <p class="e-checkbox">
+  <p class="e-checkbox e-disabled">
       <input type="checkbox" id="checkbox4" name="c2" disabled value="2" /><label for="checkbox4"><i></i>备选项</label>
   </p>
                                   </xmp>
-                                  <textarea class="css">$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-checkbox{position:relative;display:inline-block;margin-right:10px;input[type=checkbox]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;border-radius:2px;&:before{display:inline-block;content:"";width:10px;height:5px;background:transparent;border:1px solid transparent;transform:rotate(-45deg);vertical-align:8px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{border-left-color:#fff;border-bottom-color:#fff}}input:disabled+label{color:#b4bccc!important}input:disabled+label i{background:#edf2fc!important;border-color:#d8dce5!important}input:checked:disabled+label i{&:before{border-left-color:#b4bccc;border-bottom-color:#b4bccc}}}</textarea>
-                                  <button class="copy">复制SCSS样式</button>
                               </div>
                               <div class="arrow">
                                   <i></i>
@@ -263,10 +257,10 @@
                       <div class="case">
                           <ul>
                               <li>
-                                  <p class="e-checkbox border">
+                                  <p class="e-checkbox e-border">
                                       <input type="checkbox" id="checkbox5" name="c3" checked value="1" /><label for="checkbox5"><i></i>备选项</label>
                                   </p>
-                                  <p class="e-checkbox border">
+                                  <p class="e-checkbox e-border">
                                       <input type="checkbox" id="checkbox6" name="c3" value="2" /><label for="checkbox6"><i></i>备选项</label>
                                   </p>
                               </li>
@@ -274,10 +268,10 @@
                           <div class="more">
                               <div class="code">
                                   <xmp>
-  <p class="e-checkbox border">
+  <p class="e-checkbox e-border">
       <input type="checkbox" id="checkbox5" name="c3" checked value="1" /><label for="checkbox5"><i></i>备选项</label>
   </p>
-  <p class="e-checkbox border">
+  <p class="e-checkbox e-border">
       <input type="checkbox" id="checkbox6" name="c3" value="2" /><label for="checkbox6"><i></i>备选项</label>
   </p>
                                   </xmp>

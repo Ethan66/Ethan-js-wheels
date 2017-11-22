@@ -173,19 +173,21 @@ main{
       }
     }
 
-    input:disabled+label{
-      color: #b4bccc !important;
-    }
-    input:disabled+label i{
-      background: transparent !important; border-color: #b4bccc !important;
-    }
-    input:checked:disabled+label i{
-      &:before{
-        background: #b4bccc;
+    &.e-disabled{
+      input:disabled+label{
+        color: #b4bccc;
+      }
+      input:disabled+label i{
+        background: transparent; border-color: #b4bccc;
+      }
+      input:checked:disabled+label i{
+        &:before{
+          background: #b4bccc;
+        }
       }
     }
 
-    &.border{
+    &.e-border{
       input{
         left: 14px;
       }

@@ -196,24 +196,24 @@ main {
     border-color: transparent; }
     #Radio .e-radio input:checked + label i:before {
       background: #fff; }
-  #Radio .e-radio input:disabled + label {
-    color: #b4bccc !important; }
-  #Radio .e-radio input:disabled + label i {
-    background: transparent !important;
-    border-color: #b4bccc !important; }
-  #Radio .e-radio input:checked:disabled + label i:before {
+  #Radio .e-radio.e-disabled input:disabled + label {
+    color: #b4bccc; }
+  #Radio .e-radio.e-disabled input:disabled + label i {
+    background: transparent;
+    border-color: #b4bccc; }
+  #Radio .e-radio.e-disabled input:checked:disabled + label i:before {
     background: #b4bccc; }
-  #Radio .e-radio.border input {
+  #Radio .e-radio.e-border input {
     left: 14px; }
-  #Radio .e-radio.border label {
+  #Radio .e-radio.e-border label {
     display: block;
     border: 1px solid #ddd;
     padding: 8px 18px 8px 35px;
     border-radius: 4px; }
-    #Radio .e-radio.border label i {
+    #Radio .e-radio.e-border label i {
       top: 11px;
       left: 13px; }
-  #Radio .e-radio.border input:checked + label {
+  #Radio .e-radio.e-border input:checked + label {
     border-color: #409eff; }
 
 #Checkbox .e-checkbox {
