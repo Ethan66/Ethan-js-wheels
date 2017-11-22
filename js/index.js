@@ -117,6 +117,8 @@ var Nav=(function(){
                 if(self.$preActive){
                     self.$preActive.addClass("none")
                 }
+                self.$ct.find(".active").removeClass("active")
+                $(this).parent("dd").addClass("active")
                 var id=$(this).attr("data-url")
                 console.log(id)
                 $("#"+id).removeClass("none")
