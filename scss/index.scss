@@ -232,19 +232,21 @@ main{
         border-left-color: #fff; border-bottom-color: #fff;
       }
     }
-
-    input:disabled+label{
-      color: #b4bccc !important;
-    }
-    input:disabled+label i{
-      background: #edf2fc !important; border-color: #d8dce5 !important;
-    }
-    input:checked:disabled+label i{
-      &:before{
-        border-left-color: #b4bccc; border-bottom-color: #b4bccc;
+    &.e-disabled{
+      input:disabled+label{
+        color: #b4bccc !important;
+      }
+      input:disabled+label i{
+        background: #edf2fc !important; border-color: #d8dce5 !important;
+      }
+      input:checked:disabled+label i{
+        &:before{
+          border-left-color: #b4bccc; border-bottom-color: #b4bccc;
+        }
       }
     }
-    &.border{
+
+    &.e-border{
       input{
         left: 14px;
       }

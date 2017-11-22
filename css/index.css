@@ -260,25 +260,25 @@ main {
     #Checkbox .e-checkbox input:checked + label i:before {
       border-left-color: #fff;
       border-bottom-color: #fff; }
-  #Checkbox .e-checkbox input:disabled + label {
+  #Checkbox .e-checkbox.e-disabled input:disabled + label {
     color: #b4bccc !important; }
-  #Checkbox .e-checkbox input:disabled + label i {
+  #Checkbox .e-checkbox.e-disabled input:disabled + label i {
     background: #edf2fc !important;
     border-color: #d8dce5 !important; }
-  #Checkbox .e-checkbox input:checked:disabled + label i:before {
+  #Checkbox .e-checkbox.e-disabled input:checked:disabled + label i:before {
     border-left-color: #b4bccc;
     border-bottom-color: #b4bccc; }
-  #Checkbox .e-checkbox.border input {
+  #Checkbox .e-checkbox.e-border input {
     left: 14px; }
-  #Checkbox .e-checkbox.border label {
+  #Checkbox .e-checkbox.e-border label {
     display: block;
     border: 1px solid #ddd;
     padding: 8px 18px 8px 35px;
     border-radius: 4px; }
-    #Checkbox .e-checkbox.border label i {
+    #Checkbox .e-checkbox.e-border label i {
       top: 11px;
       left: 13px; }
-  #Checkbox .e-checkbox.border input:checked + label {
+  #Checkbox .e-checkbox.e-border input:checked + label {
     border-color: #409eff; }
 
 #Input .e-input {
