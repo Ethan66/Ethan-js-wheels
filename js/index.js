@@ -1,3 +1,9 @@
+//SCSS样式数组
+var scssArr={
+    Radio:'$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-radio{position:relative;display:inline-block;margin-right:10px;input[type=radio]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;border-radius:50%;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;&:before{display:inline-block;content:"";width:4px;height:4px;background:transparent;border-radius:50%;vertical-align:7px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{background:#fff}}&.e-disabled{input:disabled+label{color:#b4bccc}input:disabled+label i{background:transparent;border-color:#b4bccc}input:checked:disabled+label i{&:before{background:#b4bccc}}}&.e-border{input{left:14px}label{display:block;border:1px solid #ddd;padding:8px 18px 8px 35px;border-radius:4px;i{top:11px;left:13px}}input:checked+label{border-color:$color}}}',
+    Checkbox:'$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-checkbox{position:relative;display:inline-block;margin-right:10px;input[type=checkbox]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;border-radius:2px;&:before{display:inline-block;content:"";width:10px;height:5px;background:transparent;border:1px solid transparent;transform:rotate(-45deg);vertical-align:8px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{border-left-color:#fff;border-bottom-color:#fff}}&.e-disabled{input:disabled+label{color:#b4bccc!important}input:disabled+label i{background:#edf2fc!important;border-color:#d8dce5!important}input:checked:disabled+label i{&:before{border-left-color:#b4bccc;border-bottom-color:#b4bccc}}}&.e-border{input{left:14px}label{display:block;border:1px solid #ddd;padding:8px 18px 8px 35px;border-radius:4px;i{top:11px;left:13px}}input:checked+label{border-color:$color}}}',
+    Input:'$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-input{display:inline-block;input{max-width:300px;padding:10px;border-radius:4px;border:1px solid #d8dce5;outline:0;transition:all .6s;&::-webkit-input-placeholder{color:#b4bccc}&:-moz-placeholder{color:#b4bccc}&::-moz-placeholder{color:#b4bccc}&:-ms-input-placeholder{color:#b4bccc}&:focus{border-color:$color}&:disabled{background:#f5f7fa;border-color:#dfe4ed;color:#b4bccc;cursor:not-allowed}}&.e-icon-left{position:relative;input{padding-left:36px}svg{position:absolute;left:7px;top:7px;width:20px;height:20px;fill:#b4bccc}}&.e-icon.e-icon-after{position:relative;input{padding-right:40px}svg{position:absolute;right:7px;top:7px;width:24px;height:24px;fill:#b4bccc}}}'
+}
 //生成导航
 var Nav=(function(){
     var data={
@@ -76,13 +82,57 @@ Nav.init($("#nav"))
 var RenderCode=(function(){
     var RenderCode1=function($ct){
         this.init($ct)
-        // this.bind()
+        this.bind()
     }
     RenderCode1.prototype={
         init:function($ct){
             this.$ct=$ct
-            this.li=$ct.find("li").html()
-            console.log(this.li)
+            this.$ctId=this.$ct.attr("id")
+            this.$demoLi=this.$ct.find(".demo>li")
+            this.$liArr=$ct.find(".case>ul li")
+            this.codeArr=[]
+        },
+        bind:function(){
+            var self=this;
+            self.codeArr=self.getCode(self.$liArr)
+            this.render()
+        },
+        getCode:function($liArr){
+            var arr=[]
+            $liArr.each(function(value,index){
+                var code=$(this).html()
+                code=code.replace(/[ ]{32}/g,'')
+                arr.push(code)
+            })
+            return arr
+        },
+        render:function(){
+            /*<div class="more">
+                <div class="code">
+                    <xmp>
+                    <p class="e-input">
+                    <input type="text" name="i1" placeholder="请输入内容" />
+                    </p>
+                    </xmp>
+                    <textarea class="css">$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;</textarea>
+                    <button class="copy">复制SCSS样式</button>
+                </div>
+                <div class="arrow">
+                    <i></i>
+                    <span>显示代码</span>
+                </div>
+            </div>*/
+            var self=this;
+            self.codeArr.forEach(function(value,index){
+                var html='<div class="more"><div class="code">'
+                html+='<xmp>'+value+'</xmp>'
+                if(index==0){
+                    html+='<textarea class="css">'+scssArr[self.$ctId]+'</textarea><button class="copy">复制SCSS样式</button>'
+                }
+                html+='</div>'
+                html+='<div class="arrow"><i></i><span>显示代码</span></div></div>'
+                self.$demoLi.eq(index).find(".case").append(html)
+            })
         }
     }
     return {
@@ -93,7 +143,7 @@ var RenderCode=(function(){
         }
     }
 })()
-RenderCode.init($(".demo .case"))
+RenderCode.init($(".model"))
 
 
 

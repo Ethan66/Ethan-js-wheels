@@ -120,7 +120,8 @@ main {
             padding-bottom: 10px;
             border-bottom: 1px solid #ddd; }
             main #content .demo .case .more .code xmp {
-              width: 100%; }
+              width: 100%;
+              line-height: 20px; }
             main #content .demo .case .more .code .css {
               opacity: 0;
               width: 0; }
