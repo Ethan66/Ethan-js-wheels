@@ -154,14 +154,24 @@ var AddModelBtn=(function(){
     AddModelBtn1.prototype={
         init:function($ct){
             this.$ct=$ct
+            this.class=$ct.attr("class")
         },
         bind:function(){
             var self=this;
             self.render()
             self.$ct.on("click","button",function(){
-                var id=self.$ct.attr("class")
-                $("."+id+"1").show();
+                $("."+self.class+"1").show();
                 // alert("此功能需要配合服务器，因为要保存添加的数据")
+            })
+            $("."+self.class+"1").on("click",".add",function(e){
+                e.preventDefault()
+                var str=$(this).parents('form.wrap').serialize()
+                str=decodeURIComponent(str)
+                alert(str)
+            })
+            $("."+self.class+"1").on("click",".cancel",function(e){
+                e.preventDefault()
+                $("."+self.class+"1").hide();
             })
         },
         render:function(){
@@ -174,29 +184,29 @@ var AddModelBtn=(function(){
            var html='<button><svg class="icon" aria-hidden="true"><use xlink:href="#icon-iconjia1"></use></svg>添加组件</button>'
            this.$ct.append(html)
            /*<div class="pop addModelBtn1 none">
-                <div class="wrap">
+                <form class="wrap">
                     <h2>添加组件</h2>
                     <div class="line">
-                        <p><span>组件名称</span><input type="text" placeholder="填写名称" /></p>
-                        <p><span>组件描述</span><input type="text" placeholder="组件描述" /></p>
+                        <p><span>组件名称</span><input type="text" name="name" placeholder="填写名称" /></p>
+                        <p><span>组件描述</span><input type="text" name="describe" placeholder="组件描述" /></p>
                     </div>
                     <div class="line">
-                        <p><span>分类</span><input type="text" placeholder="组件分类" /></p>
-                        <p><span>分类描述</span><input type="text" placeholder="分类描述" /></p>
+                        <p><span>分类</span><input type="text" name="classify" placeholder="组件分类" /></p>
+                        <p><span>分类描述</span><input type="text" name="classifyDiscribe" placeholder="分类描述" /></p>
                     </div>
                     <div class="line">
-                        <p><span>代码</span><input type="text" /></p>
+                        <p><span>代码</span><textarea name="code"></textarea></p>
                     </div>
                     <div class="line">
-                        <button>立即添加</button><button class="cancel">取消</button>
+                        <button class="add">立即添加</button><button class="cancel">取消</button>
                     </div>
-                </div>
+                </form>
             </div>*/
-           var html1='<div class="pop addModelBtn1 none"><div class="wrap"><h2>添加组件</h2>'
-            html1+='<div class="line"><p><span>组件名称</span><input type="text" placeholder="填写名称" /></p><p><span>组件描述</span><input type="text" placeholder="组件描述" /></p></div>'
-            html1+='<div class="line"><p><span>分类</span><input type="text" placeholder="组件分类" /></p><p><span>分类描述</span><input type="text" placeholder="分类描述" /></p></div>'
-            html1+='<div class="line"><p><span>代码</span><input type="text" /></p></div>'
-            html1+='<div class="line"> <button>立即添加</button><button class="cancel">取消</button></div>'
+           var html1='<div class="pop addModelBtn1 none"><form class="wrap"><h2>添加组件</h2>'
+            html1+='<div class="line"><p><span>组件名称</span><input type="text" name="name" placeholder="填写名称" /></p><p><span>组件描述</span><input type="text" placeholder="组件描述" name="describe" /></p></div>'
+            html1+='<div class="line"><p><span>分类</span><input type="text" name="classify" placeholder="组件分类" /></p><p><span>分类描述</span><input type="text" placeholder="分类描述" name="classifyDiscribe" /></p></div>'
+            html1+='<div class="line"><p><span>代码</span><textarea name="code"></textarea></p></div>'
+            html1+='<div class="line"> <button class="add">立即添加</button><button class="cancel">取消</button></div></form></div>'
             this.$ct.after(html1)
         }
     }
