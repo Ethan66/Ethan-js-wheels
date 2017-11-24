@@ -414,6 +414,8 @@ main {
         outline: 0;
         transition: all .6s;
         vertical-align: top; }
+        .pop .wrap .line textarea:focus {
+          border-color: #409eff; }
       .pop .wrap .line button {
         padding: 8px 12px;
         color: #fff;

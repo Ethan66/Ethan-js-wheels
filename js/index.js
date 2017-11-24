@@ -1,9 +1,41 @@
-//SCSS样式数组
+//SCSS样式对象
 var scssArr={
     Radio:'$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-radio{position:relative;display:inline-block;margin-right:10px;input[type=radio]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;border-radius:50%;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;&:before{display:inline-block;content:"";width:4px;height:4px;background:transparent;border-radius:50%;vertical-align:7px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{background:#fff}}&.e-disabled{input:disabled+label{color:#b4bccc}input:disabled+label i{background:transparent;border-color:#b4bccc}input:checked:disabled+label i{&:before{background:#b4bccc}}}&.e-border{input{left:14px}label{display:block;border:1px solid #ddd;padding:8px 18px 8px 35px;border-radius:4px;i{top:11px;left:13px}}input:checked+label{border-color:$color}}}',
     Checkbox:'$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-checkbox{position:relative;display:inline-block;margin-right:10px;input[type=checkbox]{position:absolute;top:3px;width:14px;height:14px;opacity:0}label{position:relative;padding-left:22px;i{display:inline-block;width:14px;height:14px;background:transparent;border:1px solid #d8dce5;text-align:center;box-sizing:border-box;position:absolute;top:3px;left:0;transition:all .5s;border-radius:2px;&:before{display:inline-block;content:"";width:10px;height:5px;background:transparent;border:1px solid transparent;transform:rotate(-45deg);vertical-align:8px;transition:all .5s}}}input:checked+label{color:$color}input:checked+label i{background:$color;border-color:transparent;&:before{border-left-color:#fff;border-bottom-color:#fff}}&.e-disabled{input:disabled+label{color:#b4bccc!important}input:disabled+label i{background:#edf2fc!important;border-color:#d8dce5!important}input:checked:disabled+label i{&:before{border-left-color:#b4bccc;border-bottom-color:#b4bccc}}}&.e-border{input{left:14px}label{display:block;border:1px solid #ddd;padding:8px 18px 8px 35px;border-radius:4px;i{top:11px;left:13px}}input:checked+label{border-color:$color}}}',
     Input:'$maxWidth:1200px;$color:#409eff;$color1:#1f2f3d;$color2:#5e6d82;.e-input{display:inline-block;input{max-width:300px;padding:10px;border-radius:4px;border:1px solid #d8dce5;outline:0;transition:all .6s;&::-webkit-input-placeholder{color:#b4bccc}&:-moz-placeholder{color:#b4bccc}&::-moz-placeholder{color:#b4bccc}&:-ms-input-placeholder{color:#b4bccc}&:focus{border-color:$color}&:disabled{background:#f5f7fa;border-color:#dfe4ed;color:#b4bccc;cursor:not-allowed}}&.e-icon-left{position:relative;input{padding-left:36px}svg{position:absolute;left:7px;top:7px;width:20px;height:20px;fill:#b4bccc}}&.e-icon.e-icon-after{position:relative;input{padding-right:40px}svg{position:absolute;right:7px;top:7px;width:24px;height:24px;fill:#b4bccc}}}'
 }
+/*//组件对象
+var modelArr=[
+    {
+        type:{name:'Radio 单选框',describe:'在一组备选项中进行单选'},
+        content:[
+            {classify:'基础用法',classifyDescribe:'由于选项默认可见，不宜过多，若选项过多，建议使用 Select 选择器。',
+            code:' <p class="e-radio">\
+            <input type="radio" id="radio1" name="r" checked="" value="1"><label for="radio1"><i></i>备选项</label>\
+            </p>\
+            <p class="e-radio">\
+            <input type="radio" id="radio2" name="r" value="2"><label for="radio2"><i></i>备选项</label>\
+            </p>'},
+            {classify:'禁用状态',classifyDescribe:'单选框不可用的状态。',
+                code:' <p class="e-radio e-disabled">\
+                <input type="radio" id="radio3" name="r1" value="1" checked="" disabled=""><label for="radio3"><i></i>备选项</label>\
+            </p>\
+            <p class="e-radio e-disabled">\
+            <input type="radio" id="radio4" name="r1" value="2" disabled=""><label for="radio4"><i></i>备选项</label>\
+            </p>'},
+            {classify:'禁用状态',classifyDescribe:'单选框不可用的状态。',
+                code:' <p class="e-radio e-disabled">\
+                <input type="radio" id="radio3" name="r1" value="1" checked="" disabled=""><label for="radio3"><i></i>备选项</label>\
+            </p>\
+            <p class="e-radio e-disabled">\
+            <input type="radio" id="radio4" name="r1" value="2" disabled=""><label for="radio4"><i></i>备选项</label>\
+            </p>'},]
+    },
+
+]*/
+//组件对象
+var modelArr=[]
+
 //生成导航
 var Nav=(function(){
     var data={
@@ -167,7 +199,10 @@ var AddModelBtn=(function(){
                 e.preventDefault()
                 var str=$(this).parents('form.wrap').serialize()
                 str=decodeURIComponent(str)
-                alert(str)
+                var obj=self.changeStr(str)
+                self.modifyModelArr(obj)
+
+                console.log(JSON.stringify(modelArr))
             })
             $("."+self.class+"1").on("click",".cancel",function(e){
                 e.preventDefault()
@@ -208,6 +243,43 @@ var AddModelBtn=(function(){
             html1+='<div class="line"><p><span>代码</span><textarea name="code"></textarea></p></div>'
             html1+='<div class="line"> <button class="add">立即添加</button><button class="cancel">取消</button></div></form></div>'
             this.$ct.after(html1)
+        },
+        changeStr:function(str){
+            var arr=str.split("&")
+            var obj={type:{},content:{}}
+            arr.forEach(function(value,index){
+                var str=value.replace("=","?")
+                var arr1=str.split("?")
+                arr1[1]=arr1[1]==undefined?" ":arr1[1]
+                if(arr1[0]=="code"|| arr1[0]=="name"){
+                    arr1[1]=arr1[1].replace(/\+/g," ")
+                }
+                if(arr1[0]=="name"|| arr1[0]=="describe"){
+                    obj['type'][arr1[0]]=arr1[1]
+                }
+                else{
+                    obj["content"][arr1[0]]=arr1[1]
+                }
+            })
+            return obj;
+        },
+        modifyModelArr:function(obj){
+            if(!obj['type']['name']){
+                alert("请输入组件名称")
+                return
+            }
+            var hasExist=0;
+            console.log(modelArr)
+            for(var i=0;i<modelArr.length;i++){
+                if(obj['type']['name']==modelArr[i]['type']['name']) {
+                    hasExist=1;
+                    modelArr[i]["content"].push(obj["content"])
+                }
+            }
+            if(!hasExist){
+                modelArr.push(obj)
+            }
+            console.log(modelArr)
         }
     }
     return {
