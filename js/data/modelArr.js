@@ -29,7 +29,7 @@
  ]*/
 
 
-define([],function(){
+define(function(){
     //组件对象
     var modelArr=[]
     return modelArr

@@ -27,7 +27,6 @@ define(['jquery'],function($){
                     self.$ct.find(".active").removeClass("active")
                     $(this).parent("dd").addClass("active")
                     var id=$(this).attr("data-url")
-                    console.log(id)
                     $("#"+id).removeClass("none")
                     self.$preActive=$("#"+id)
                 })
