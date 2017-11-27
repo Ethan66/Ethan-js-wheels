@@ -7,9 +7,10 @@ requirejs.config({
     }
 });
 //加载模块
-requirejs(['jquery', 'app/NavGenerate','app/CodeGenerate','app/AddBtnGenerate','app/ShowOrHideCode'],
-    function($,NavGenerate,CodeGenerate,AddBtnGenerate,ShowOrHideCode) {
+requirejs(['jquery', 'app/NavGenerate','app/ModelRender','app/CodeGenerate','app/AddBtnGenerate','app/ShowOrHideCode'],
+    function($,NavGenerate,ModelRender,CodeGenerate,AddBtnGenerate,ShowOrHideCode) {
         NavGenerate.Nav.init($("#nav"))
+        ModelRender.ModelHmtlRender.init($(".main"))
         CodeGenerate.RenderCode.init($(".model"))
         AddBtnGenerate.AddModelBtn.init($('.addModelBtn'))
         ShowOrHideCode.ShowOrHide.init($("#content .demo .case"))

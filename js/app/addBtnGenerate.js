@@ -1,5 +1,5 @@
 //生成添加按钮
-define(['jquery','data/modelArr'],function($,modelArr){
+define(['jquery','data/modelArr'],function($,modelObj){
     var AddModelBtn=(function(){
         var AddModelBtn1=function($ct){
             this.init($ct)
@@ -22,9 +22,9 @@ define(['jquery','data/modelArr'],function($,modelArr){
                     var str=$(this).parents('form.wrap').serialize()
                     str=decodeURIComponent(str)
                     var obj=self.changeStr(str)
-                    self.modifyModelArr(obj)
+                    self.modifymodelObj(obj)
 
-                    console.log(JSON.stringify(modelArr))
+                    console.log(JSON.stringify(modelObj))
                 })
                 $("."+self.class+"1").on("click",".cancel",function(e){
                     e.preventDefault()
@@ -60,7 +60,8 @@ define(['jquery','data/modelArr'],function($,modelArr){
                  </form>
                  </div>*/
                 var html1='<div class="pop addModelBtn1 none"><form class="wrap"><h2>添加组件</h2>'
-                html1+='<div class="line"><p><span>组件名称</span><input type="text" name="name" placeholder="填写名称" /></p><p><span>组件描述</span><input type="text" placeholder="组件描述" name="describe" /></p></div>'
+                html1+='<div class="line"><p><span>组件</span><input type="text" name="model" placeholder="填写组件名" /></p></div>'
+                html1+='<div class="line"><p><span>组件标题</span><input type="text" name="name" placeholder="填写名称" /></p><p><span>组件描述</span><input type="text" placeholder="组件描述" name="describe" /></p></div>'
                 html1+='<div class="line"><p><span>分类</span><input type="text" name="classify" placeholder="组件分类" /></p><p><span>分类描述</span><input type="text" placeholder="分类描述" name="classifyDiscribe" /></p></div>'
                 html1+='<div class="line"><p><span>代码</span><textarea name="code"></textarea></p></div>'
                 html1+='<div class="line"> <button class="add">立即添加</button><button class="cancel">取消</button></div></form></div>'
@@ -69,6 +70,7 @@ define(['jquery','data/modelArr'],function($,modelArr){
             changeStr:function(str){
                 var arr=str.split("&")
                 var obj={type:{},content:[{}]}
+                var key=''
                 arr.forEach(function(value,index){
                     var str=value.replace("=","?")
                     var arr1=str.split("?")
@@ -76,32 +78,47 @@ define(['jquery','data/modelArr'],function($,modelArr){
                     if(arr1[0]=="code"|| arr1[0]=="name"){
                         arr1[1]=arr1[1].replace(/\+/g," ")
                     }
-                    if(arr1[0]=="name"|| arr1[0]=="describe"){
-                        obj['type'][arr1[0]]=arr1[1]
+                    if(arr1[0]=="model"){
+                        key=arr1[1]
                     }
-                    else{
-                        obj["content"][0][arr1[0]]=arr1[1]
+                    else {
+                        if(arr1[0]=="name"|| arr1[0]=="describe"){
+                            obj['type'][arr1[0]]=arr1[1]
+                        }
+                        else{
+                            obj["content"][0][arr1[0]]=arr1[1]
+                        }
                     }
                 })
-                return obj;
+                var obj1={}
+                obj1[key]=obj
+                return obj1;
             },
-            modifyModelArr:function(obj){
-                if(!obj['type']['name']){
-                    alert("请输入组件名称")
-                    return
-                }
+            modifymodelObj:function(obj){
                 var hasExist=0;
-                console.log(modelArr)
-                for(var i=0;i<modelArr.length;i++){
-                    if(obj['type']['name']==modelArr[i]['type']['name']) {
-                        hasExist=1;
-                        modelArr[i]["content"].push(obj["content"][0])
+                for(var key in obj){
+                    if(!key) {
+                        alert("请输入组件名称")
+                        return
+                    }
+                    if(!obj[key]['type']['name']){
+                        alert("请输入组件标题")
+                        return
+                    }
+                    console.log(modelObj)
+                    for(var key1 in modelObj){
+                        if(key==key1){
+                            hasExist=1;
+                            modelObj[key1]["content"].push(obj[key]["content"][0])
+                            // console.log(modelObj)
+                            break
+                        }
+                    }
+                    if(!hasExist){
+                        modelObj[key]=obj[key]
+                        // console.log(modelObj)
                     }
                 }
-                if(!hasExist){
-                    modelArr.push(obj)
-                }
-                console.log(modelArr)
             }
         }
         return {
