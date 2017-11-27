@@ -1,5 +1,5 @@
 //生成添加按钮
-define(['jquery'],function($){
+define(['jquery','data/modelArr'],function($,modelArr){
     var AddModelBtn=(function(){
         var AddModelBtn1=function($ct){
             this.init($ct)
