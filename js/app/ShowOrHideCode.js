@@ -12,7 +12,7 @@ define(['jquery'],function($){
                 var $arrow=this.$arrow=$ct.find('.arrow')
                 var $arrSpan=this.$arrSpan=$arrow.find('span')
                 var spanWidth=this.spanWidth=$arrSpan.width()
-                $arrow.css("text-indent",2*spanWidth)
+                $arrow.css("text-indent",2*56)
             },
             bind:function(){
                 var self=this;
@@ -26,7 +26,7 @@ define(['jquery'],function($){
                 self.$ct.on("mouseleave",function(){
                     if(self.$code.css("display")=="none"){
                         $(this).removeClass("hover")
-                        self.$arrow.animate({'text-indent':2*self.spanWidth},200)
+                        self.$arrow.animate({'text-indent':2*56},200)
                         self.$arrSpan.animate({opacity:0},200)
                     }
                 })
@@ -34,7 +34,7 @@ define(['jquery'],function($){
                     self.$code.slideToggle(function(){
                         if($(this).css("display")=="none"){
                             self.$arrow.find("i").removeClass("up")
-                            self.$arrow.animate({'text-indent':2*self.spanWidth},200)
+                            self.$arrow.animate({'text-indent':2*56},200)
                             self.$arrSpan.animate({opacity:0},200)
                         }
                         else{
