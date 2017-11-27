@@ -68,7 +68,7 @@ define(['jquery','data/modelArr'],function($,modelArr){
             },
             changeStr:function(str){
                 var arr=str.split("&")
-                var obj={type:{},content:{}}
+                var obj={type:{},content:[{}]}
                 arr.forEach(function(value,index){
                     var str=value.replace("=","?")
                     var arr1=str.split("?")
@@ -80,7 +80,7 @@ define(['jquery','data/modelArr'],function($,modelArr){
                         obj['type'][arr1[0]]=arr1[1]
                     }
                     else{
-                        obj["content"][arr1[0]]=arr1[1]
+                        obj["content"][0][arr1[0]]=arr1[1]
                     }
                 })
                 return obj;
@@ -95,7 +95,7 @@ define(['jquery','data/modelArr'],function($,modelArr){
                 for(var i=0;i<modelArr.length;i++){
                     if(obj['type']['name']==modelArr[i]['type']['name']) {
                         hasExist=1;
-                        modelArr[i]["content"].push(obj["content"])
+                        modelArr[i]["content"].push(obj["content"][0])
                     }
                 }
                 if(!hasExist){
