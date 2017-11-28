@@ -23,7 +23,7 @@ define(['jquery','data/scssArr'],function($,scssArr){
             getCode:function($liArr){
                 var arr=[]
                 $liArr.each(function(value,index){
-                    var code=$(this).html()
+                    var code='\n  '+$(this).html()
                     code=code.replace(/[ ]{32}/g,'')
                     arr.push(code)
                 })

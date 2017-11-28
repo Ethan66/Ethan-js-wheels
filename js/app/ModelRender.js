@@ -15,15 +15,21 @@ define(["jquery",'data/modelArr'],function($,modelObj){
             render:function(obj){
                 for(var key in obj){
                     var html='<div id="'+key+'" class="model none">'
-                    html+='<div clas="title"><h1>'+obj[key]["type"]["name"]+'</h1>'+'<span>'+obj[key]["type"]["describe"]+'</span></div>'
+                    html+='<div class="title"><h1>'+obj[key]["type"]["name"]+'</h1>'+'<span>'+obj[key]["type"]["describe"]+'</span></div>'
                     html+='<ul class="demo">'
                     obj[key]["content"].forEach(function(value,index){
-                        html+='<li><div class="title2"><h2>'+value["classify"]+'</h2>'+'<span>'+value["classifyDiscribe"]+'</span></div>'
+                        html+='<li><div class="title2"><h2>'+value["classify"]+'</h2>'
+                        if(value["classifyDiscribe"]){
+                            html+='<span>'+value["classifyDiscribe"]+'</span></div>'
+                        }
+                        else{
+                            html+='</div>'
+                        }
                         html+='<div class="case"><ul><li>'+value["code"]+'</li></ul></div></li>'
                     })
                     html+='</ul></div>'
+                    this.$ct.append(html)
                 }
-                this.$ct.append(html)
             }
         }
         return {

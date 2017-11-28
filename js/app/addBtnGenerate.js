@@ -9,6 +9,7 @@ define(['jquery','data/modelArr'],function($,modelObj){
             init:function($ct){
                 this.$ct=$ct
                 this.class=$ct.attr("class")
+                this.modelObjHasChange=false
             },
             bind:function(){
                 var self=this;
@@ -22,9 +23,19 @@ define(['jquery','data/modelArr'],function($,modelObj){
                     var str=$(this).parents('form.wrap').serialize()
                     str=decodeURIComponent(str)
                     var obj=self.changeStr(str)
+                    self.modelObjHasChange=false
                     self.modifymodelObj(obj)
 
+                    if(!self.modelObjHasChange){
+                        return
+                    }
                     console.log(JSON.stringify(modelObj))
+                    alert("请打开控制台复制log的内容到modelArr.js中")
+                    $("."+self.class+'1').hide()
+                    $(this).parents("form.wrap").find("input").each(function(index,value){
+                        $(this).val('')
+                    })
+                    $(this).parents("form.wrap").find("textarea").val("")
                 })
                 $("."+self.class+"1").on("click",".cancel",function(e){
                     e.preventDefault()
@@ -95,6 +106,7 @@ define(['jquery','data/modelArr'],function($,modelObj){
                 return obj1;
             },
             modifymodelObj:function(obj){
+                var self=this
                 var hasExist=0;
                 for(var key in obj){
                     if(!key) {
@@ -105,7 +117,7 @@ define(['jquery','data/modelArr'],function($,modelObj){
                         alert("请输入组件标题")
                         return
                     }
-                    console.log(modelObj)
+                    // console.log(modelObj)
                     for(var key1 in modelObj){
                         if(key==key1){
                             hasExist=1;
@@ -118,6 +130,7 @@ define(['jquery','data/modelArr'],function($,modelObj){
                         modelObj[key]=obj[key]
                         // console.log(modelObj)
                     }
+                    self.modelObjHasChange=true
                 }
             }
         }
