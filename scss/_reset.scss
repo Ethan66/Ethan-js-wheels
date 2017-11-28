@@ -1,0 +1,15 @@
+*{
+  margin: 0; padding: 0; box-sizing: border-box;
+  &:after,&:before{
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+}
+ul,dl,ol,li,dd,dt{
+  list-style: none;
+}
+a{
+  text-decoration: none; color: #333;
+}
+a:hover{
+  text-decoration: none;
+}
