@@ -154,14 +154,27 @@
     }
   }
 }
+$width30: 30px;
 #InputNumber{
   .e-inputNumber{
-    display: inline-block; line-height: 30px; border: 1px solid #ddd; position: relative;
+    display: inline-block; line-height: $width30; border: 1px solid #ddd; position: relative;
     input{
-      width: 300px; padding: 0 30px;
+      width: 300px; padding: 0 $width30; border: none;
     }
     span{
-      position: absolute;
+      position: absolute; display: block; width: $width30; height: 100%; padding: 8px;
+      &:before{
+        display: block; width: 100%; content: ""; border-top: 2px solid #666; position: absolute; top: 6px;
+      }
+      &.minus{
+
+      }
+      &.plus{
+        right: 0;
+        &:after{
+          display: block; height: 100%; content: ""; border-left: 2px solid #666; position: absolute; left: 6px; 
+        }
+      }
     }
   }
 }

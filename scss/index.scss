@@ -1,18 +1,5 @@
-*{
-  margin: 0; padding: 0; box-sizing: border-box;
-  &:after,&:before{
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-}
-ul,dl,ol,li,dd,dt{
-  list-style: none;
-}
-a{
-  text-decoration: none; color: #333;
-}
-a:hover{
-  text-decoration: none;
-}
+@import "reset";
+@import "var";
 body{
   font-family: "Microsoft YaHei", -apple-system, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
   font-size: 14px;
@@ -27,7 +14,7 @@ body{
   display: none;
 }
 
-$maxWidth: 1200px;$color: #409eff; $color1: #1f2f3d; $color2: #5e6d82;
+
 header{
   height:80px; max-width: $maxWidth; margin: 0 auto;
 }
@@ -147,162 +134,6 @@ main{
     }
   }
 }
-#Radio{
-  .e-radio{
-    position: relative; display: inline-block; margin-right: 10px;
-    input[type=radio]{
-      position: absolute; top: 3px; width: 14px; height: 14px; opacity: 0;
-    }
-    label{
-      position: relative; padding-left: 22px;
-      i{
-        display: inline-block; width: 14px; height: 14px; background: transparent; border: 1px solid #d8dce5;
-        text-align: center; border-radius: 50%;
-        box-sizing: border-box; position: absolute; top: 3px; left: 0;
-        transition: all .5s;
-        &:before{
-          display: inline-block; content: ""; width: 4px; height: 4px; background: transparent; border-radius: 50%;
-          vertical-align: 7px; transition: all .5s;
-        }
-      }
-    }
-    input:checked+label{
-      color: $color;
-    }
-    input:checked+label i{
-      background: $color; border-color: transparent;
-      &:before{
-        background: #fff;
-      }
-    }
-
-    &.e-disabled{
-      input:disabled+label{
-        color: #b4bccc;
-      }
-      input:disabled+label i{
-        background: transparent; border-color: #b4bccc;
-      }
-      input:checked:disabled+label i{
-        &:before{
-          background: #b4bccc;
-        }
-      }
-    }
-
-    &.e-border{
-      input{
-        left: 14px;
-      }
-      label{
-        display: block; border: 1px solid #ddd; padding: 8px 18px 8px 35px; border-radius: 4px;
-        i{
-          top: 11px; left: 13px;
-        }
-      }
-      input:checked+label{
-        border-color: $color;
-      }
-    }
-  }
-}
-#Checkbox{
-  .e-checkbox{
-    position: relative; display: inline-block; margin-right: 10px;
-    input[type=checkbox]{
-      position: absolute; top: 3px; width: 14px; height: 14px; opacity: 0;
-    }
-    label{
-      position: relative; padding-left: 22px;
-      i{
-        display: inline-block; width: 14px; height: 14px; background: transparent; border: 1px solid #d8dce5;
-        text-align: center;
-        box-sizing: border-box; position: absolute; top: 3px; left: 0;
-        transition: all .5s; border-radius: 2px;
-        &:before{
-          display: inline-block; content: ""; width: 10px; height: 5px; background: transparent;
-          border: 1px solid transparent; transform: rotate(-45deg);
-          vertical-align: 8px; transition: all .5s;
-        }
-      }
-    }
-    input:checked+label{
-      color: $color;
-    }
-    input:checked+label i{
-      background: $color; border-color: transparent;
-      &:before{
-        border-left-color: #fff; border-bottom-color: #fff;
-      }
-    }
-    &.e-disabled{
-      input:disabled+label{
-        color: #b4bccc !important;
-      }
-      input:disabled+label i{
-        background: #edf2fc !important; border-color: #d8dce5 !important;
-      }
-      input:checked:disabled+label i{
-        &:before{
-          border-left-color: #b4bccc; border-bottom-color: #b4bccc;
-        }
-      }
-    }
-
-    &.e-border{
-      input{
-        left: 14px;
-      }
-      label{
-        display: block; border: 1px solid #ddd; padding: 8px 18px 8px 35px; border-radius: 4px;
-        i{
-          top: 11px; left: 13px;
-        }
-      }
-      input:checked+label{
-        border-color: $color;
-      }
-    }
-  }
-}
-#Input{
-  .e-input{
-    display: inline-block;
-    input{
-      max-width: 300px; padding: 10px; border-radius: 4px; border: 1px solid #d8dce5; outline: 0;
-      transition: all .6s;
-      &::-webkit-input-placeholder{ color:#b4bccc; }
-      &:-moz-placeholder{ color:#b4bccc; }
-      &::-moz-placeholder{ color:#b4bccc; }
-      &:-ms-input-placeholder{ color:#b4bccc;}
-      &:focus{
-        border-color: $color;
-      }
-
-      &:disabled{
-        background: #f5f7fa; border-color: #dfe4ed; color: #b4bccc; cursor: not-allowed;
-      }
-    }
-    &.e-icon-left{
-      position: relative;
-      input{
-        padding-left: 36px;
-      }
-      svg{
-        position: absolute; left: 7px; top: 7px; width: 20px; height: 20px; fill: #b4bccc;
-      }
-    }
-    &.e-icon.e-icon-after{
-      position: relative;
-      input{
-        padding-right: 40px;
-      }
-      svg{
-        position: absolute; right: 7px; top: 7px; width: 24px; height: 24px; fill: #b4bccc;
-      }
-    }
-  }
-}
 
 .addModelBtn{
   position: fixed; z-index: 100; bottom: 0; right: 0;
@@ -378,3 +209,5 @@ main{
     }
   }
 }
+
+@import "form";

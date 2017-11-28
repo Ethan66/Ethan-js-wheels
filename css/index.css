@@ -158,6 +158,108 @@ main {
               opacity: 0;
               color: #409eff; }
 
+.addModelBtn {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  right: 0; }
+  .addModelBtn button {
+    padding: 8px 12px;
+    background: #409eff;
+    color: #fff;
+    border-color: transparent;
+    border-radius: 4px;
+    cursor: pointer; }
+    .addModelBtn button:hover {
+      background: #3195fd; }
+  .addModelBtn svg {
+    fill: white;
+    width: 14px;
+    height: 14px; }
+
+.pop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(51, 51, 51, 0.6);
+  text-align: center; }
+  .pop:before {
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle; }
+  .pop .wrap {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -200px;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 4px;
+    text-align: left;
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.2); }
+    .pop .wrap h2 {
+      font-weight: normal;
+      font-size: 20px;
+      margin-bottom: 20px; }
+    .pop .wrap .line {
+      margin-bottom: 20px;
+      text-align: center; }
+      .pop .wrap .line:last-child {
+        margin-bottom: 0; }
+      .pop .wrap .line p {
+        margin-bottom: 20px;
+        text-align: right; }
+      .pop .wrap .line span {
+        padding-right: 10px;
+        font-size: 16px; }
+      .pop .wrap .line input {
+        width: 400px;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #d8dce5;
+        outline: 0;
+        transition: all .6s; }
+        .pop .wrap .line input::-webkit-input-placeholder {
+          color: #b4bccc; }
+        .pop .wrap .line input:-moz-placeholder {
+          color: #b4bccc; }
+        .pop .wrap .line input::-moz-placeholder {
+          color: #b4bccc; }
+        .pop .wrap .line input:-ms-input-placeholder {
+          color: #b4bccc; }
+        .pop .wrap .line input:focus {
+          border-color: #409eff; }
+      .pop .wrap .line textarea {
+        width: 400px;
+        height: 100px;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #d8dce5;
+        outline: 0;
+        transition: all .6s;
+        vertical-align: top; }
+        .pop .wrap .line textarea:focus {
+          border-color: #409eff; }
+      .pop .wrap .line button {
+        padding: 8px 12px;
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        background: #409eff;
+        margin-right: 10px; }
+        .pop .wrap .line button:hover {
+          background: #3195fd; }
+        .pop .wrap .line button.cancel {
+          background: #fff;
+          color: #666;
+          border: 1px solid #bbb; }
+          .pop .wrap .line button.cancel:hover {
+            background: #fff;
+            border-color: #999; }
+
 #Radio .e-radio {
   position: relative;
   display: inline-block;
@@ -332,106 +434,36 @@ main {
       height: 24px;
       fill: #b4bccc; }
 
-.addModelBtn {
-  position: fixed;
-  z-index: 100;
-  bottom: 0;
-  right: 0; }
-  .addModelBtn button {
-    padding: 8px 12px;
-    background: #409eff;
-    color: #fff;
-    border-color: transparent;
-    border-radius: 4px;
-    cursor: pointer; }
-    .addModelBtn button:hover {
-      background: #3195fd; }
-  .addModelBtn svg {
-    fill: white;
-    width: 14px;
-    height: 14px; }
-
-.pop {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(51, 51, 51, 0.6);
-  text-align: center; }
-  .pop:before {
-    display: inline-block;
-    content: "";
+#InputNumber .e-inputNumber {
+  display: inline-block;
+  line-height: 30px;
+  border: 1px solid #ddd;
+  position: relative; }
+  #InputNumber .e-inputNumber input {
+    width: 300px;
+    padding: 0 30px;
+    border: none; }
+  #InputNumber .e-inputNumber span {
+    position: absolute;
+    display: block;
+    width: 30px;
     height: 100%;
-    vertical-align: middle; }
-  .pop .wrap {
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: -200px;
-    background: #fff;
-    padding: 30px 40px;
-    border-radius: 4px;
-    text-align: left;
-    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.2); }
-    .pop .wrap h2 {
-      font-weight: normal;
-      font-size: 20px;
-      margin-bottom: 20px; }
-    .pop .wrap .line {
-      margin-bottom: 20px;
-      text-align: center; }
-      .pop .wrap .line:last-child {
-        margin-bottom: 0; }
-      .pop .wrap .line p {
-        margin-bottom: 20px;
-        text-align: right; }
-      .pop .wrap .line span {
-        padding-right: 10px;
-        font-size: 16px; }
-      .pop .wrap .line input {
-        width: 400px;
-        padding: 10px;
-        border-radius: 4px;
-        border: 1px solid #d8dce5;
-        outline: 0;
-        transition: all .6s; }
-        .pop .wrap .line input::-webkit-input-placeholder {
-          color: #b4bccc; }
-        .pop .wrap .line input:-moz-placeholder {
-          color: #b4bccc; }
-        .pop .wrap .line input::-moz-placeholder {
-          color: #b4bccc; }
-        .pop .wrap .line input:-ms-input-placeholder {
-          color: #b4bccc; }
-        .pop .wrap .line input:focus {
-          border-color: #409eff; }
-      .pop .wrap .line textarea {
-        width: 400px;
-        height: 100px;
-        padding: 10px;
-        border-radius: 4px;
-        border: 1px solid #d8dce5;
-        outline: 0;
-        transition: all .6s;
-        vertical-align: top; }
-        .pop .wrap .line textarea:focus {
-          border-color: #409eff; }
-      .pop .wrap .line button {
-        padding: 8px 12px;
-        color: #fff;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        cursor: pointer;
-        background: #409eff;
-        margin-right: 10px; }
-        .pop .wrap .line button:hover {
-          background: #3195fd; }
-        .pop .wrap .line button.cancel {
-          background: #fff;
-          color: #666;
-          border: 1px solid #bbb; }
-          .pop .wrap .line button.cancel:hover {
-            background: #fff;
-            border-color: #999; }
+    padding: 8px; }
+    #InputNumber .e-inputNumber span:before {
+      display: block;
+      width: 100%;
+      content: "";
+      border-top: 2px solid #666;
+      position: absolute;
+      top: 6px; }
+    #InputNumber .e-inputNumber span.plus {
+      right: 0; }
+      #InputNumber .e-inputNumber span.plus:after {
+        display: block;
+        height: 100%;
+        content: "";
+        border-left: 2px solid #666;
+        position: absolute;
+        left: 6px; }
 
 /*# sourceMappingURL=index.css.map */
