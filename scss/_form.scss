@@ -154,25 +154,43 @@
     }
   }
 }
-$width30: 30px;
 #InputNumber{
   .e-inputNumber{
-    display: inline-block; line-height: $width30; border: 1px solid #ddd; position: relative;
+    display: inline-block; line-height: 36px; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;  position: relative;
+    transition: all .4s;
+    &.active{
+      border-color: $color;
+      span.minus{
+        border-right-color: $color; color: $color;
+        &[disabled]{
+          border-right-color: #ddd; color: #666;
+        }
+      }
+      span.plus{
+        border-left-color: $color; color: $color;
+        &[disabled]{
+          border-left-color: #ddd; color: #666;
+        }
+      }
+    }
     input{
-      width: 300px; padding: 0 $width30; border: none;
+      width: 200px; padding: 0 36px; border: none; outline: 0; line-height: 36px; text-align: center;
     }
     span{
-      position: absolute; display: block; width: $width30; height: 100%; padding: 8px;
+      position: absolute; display: block; width: 36px; height: 100%; padding: 8px; background: #f5f7fa; cursor: pointer;
+      &[disabled]{
+        cursor: not-allowed;
+      }
       &:before{
-        display: block; width: 100%; content: ""; border-top: 2px solid #666; position: absolute; top: 6px;
+        display: block; width: 11px; content: ""; border-top: 1px solid; position: absolute; top: 17px; left: 12px;
       }
       &.minus{
-
+        border-right: 1px solid #ddd;
       }
       &.plus{
-        right: 0;
+        right: 0; top: 0; border-left: 1px solid #ddd;
         &:after{
-          display: block; height: 100%; content: ""; border-left: 2px solid #666; position: absolute; left: 6px; 
+          display: block; height: 11px; content: ""; border-left: 1px solid; position: absolute; left: 17px; top: 12px;
         }
       }
     }

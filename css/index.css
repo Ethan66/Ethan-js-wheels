@@ -436,34 +436,64 @@ main {
 
 #InputNumber .e-inputNumber {
   display: inline-block;
-  line-height: 30px;
+  line-height: 36px;
   border: 1px solid #ddd;
-  position: relative; }
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  transition: all .4s; }
+  #InputNumber .e-inputNumber.active {
+    border-color: #409eff; }
+    #InputNumber .e-inputNumber.active span.minus {
+      border-right-color: #409eff;
+      color: #409eff; }
+      #InputNumber .e-inputNumber.active span.minus[disabled] {
+        border-right-color: #ddd;
+        color: #666; }
+    #InputNumber .e-inputNumber.active span.plus {
+      border-left-color: #409eff;
+      color: #409eff; }
+      #InputNumber .e-inputNumber.active span.plus[disabled] {
+        border-left-color: #ddd;
+        color: #666; }
   #InputNumber .e-inputNumber input {
-    width: 300px;
-    padding: 0 30px;
-    border: none; }
+    width: 200px;
+    padding: 0 36px;
+    border: none;
+    outline: 0;
+    line-height: 36px;
+    text-align: center; }
   #InputNumber .e-inputNumber span {
     position: absolute;
     display: block;
-    width: 30px;
+    width: 36px;
     height: 100%;
-    padding: 8px; }
+    padding: 8px;
+    background: #f5f7fa;
+    cursor: pointer; }
+    #InputNumber .e-inputNumber span[disabled] {
+      cursor: not-allowed; }
     #InputNumber .e-inputNumber span:before {
       display: block;
-      width: 100%;
+      width: 11px;
       content: "";
-      border-top: 2px solid #666;
+      border-top: 1px solid;
       position: absolute;
-      top: 6px; }
+      top: 17px;
+      left: 12px; }
+    #InputNumber .e-inputNumber span.minus {
+      border-right: 1px solid #ddd; }
     #InputNumber .e-inputNumber span.plus {
-      right: 0; }
+      right: 0;
+      top: 0;
+      border-left: 1px solid #ddd; }
       #InputNumber .e-inputNumber span.plus:after {
         display: block;
-        height: 100%;
+        height: 11px;
         content: "";
-        border-left: 2px solid #666;
+        border-left: 1px solid;
         position: absolute;
-        left: 6px; }
+        left: 17px;
+        top: 12px; }
 
 /*# sourceMappingURL=index.css.map */

@@ -15,3 +15,7 @@ requirejs(['jquery', 'app/NavGenerate','app/ModelRender','app/CodeGenerate','app
         AddBtnGenerate.AddModelBtn.init($('.addModelBtn'))
         ShowOrHideCode.ShowOrHide.init($("#content .demo .case"))
     });
+
+requirejs(['jquery','app/formModel'],function($,formModel){
+    formModel.InputNumber.init($(".e-inputNumber"),10)
+});
