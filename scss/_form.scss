@@ -201,3 +201,24 @@
     }
   }
 }
+
+#Select{
+  .e-Select{
+    width: 200px; border: 1px solid #ddd; border-radius: 4px; position: relative;
+    input{
+      border: none; outline: 0; line-height: 36px; border-radius: 4px; text-indent: 10px;
+    }
+    .arrow{
+      display: block; width: 8px; height: 8px; border: 1px solid #999 {left: 0; top: 0;} position: absolute; top: 11px; right: 11px;
+      transform: rotate(45deg);
+    }
+    ul{
+      width: 100%; border: 1px solid #ddd; border-radius: 4px; position: absolute; top: 48px; z-index: 10; background: #fff;
+      &:before{
+        display: block; content: ""; width: 10px; height: 10px; border: 1px solid #ddd {left: 0; top: 0;}
+        background: #fff; 
+        position: absolute;
+      }
+    }
+  }
+}

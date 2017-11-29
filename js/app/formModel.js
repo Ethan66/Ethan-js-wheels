@@ -69,7 +69,38 @@ define(['jquery'],function($){
             }
         }
     })()
+    var Select=(function(){
+        var Select1=function($ct){
+            this.init($ct)
+            this.bind()
+        }
+        Select1.prototype={
+            init:function($ct){
+                this.$ct=$ct
+                this.$arrow=$ct.find(".arrow")
+
+            },
+            bind:function(){
+                var self=this
+                self.render()
+                self.$ct.on("click",function(){
+
+                })
+            },
+            render:function(){
+
+            }
+        }
+        return {
+            init: function($ct){
+                $ct.each(function(index,value){
+                    new Select1($(this))
+                })
+            }
+        }
+    })()
     return {
-        InputNumber:InputNumber
+        InputNumber:InputNumber,
+        Select:Select
     }
 })

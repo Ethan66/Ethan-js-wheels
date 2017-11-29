@@ -18,4 +18,5 @@ requirejs(['jquery', 'app/NavGenerate','app/ModelRender','app/CodeGenerate','app
 
 requirejs(['jquery','app/formModel'],function($,formModel){
     formModel.InputNumber.init($(".e-inputNumber"),10)
+    formModel.Select.init($(".e-Select"))
 });
