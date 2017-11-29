@@ -184,7 +184,8 @@ main {
   top: 0;
   left: 0;
   background: rgba(51, 51, 51, 0.6);
-  text-align: center; }
+  text-align: center;
+  z-index: 1000; }
   .pop:before {
     display: inline-block;
     content: "";
@@ -495,5 +496,7 @@ main {
         position: absolute;
         left: 17px;
         top: 12px; }
+#InputNumber .e-inputNumber.e-disabled input[disabled] {
+  background: #f5f7fa; }
 
 /*# sourceMappingURL=index.css.map */

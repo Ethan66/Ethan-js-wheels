@@ -195,4 +195,9 @@
       }
     }
   }
+  .e-inputNumber.e-disabled{
+    input[disabled]{
+      background: #f5f7fa;
+    }
+  }
 }

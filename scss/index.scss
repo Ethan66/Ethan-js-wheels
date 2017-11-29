@@ -149,6 +149,7 @@ main{
 }
 .pop{
   width: 100%; height: 100%; position: fixed; top: 0; left: 0; background: rgba(51,51,51,.6); text-align: center;
+  z-index: 1000;
   &:before{
     display:inline-block; content:""; height:100%;vertical-align: middle;
   }
