@@ -503,13 +503,18 @@ main {
   width: 200px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  position: relative; }
+  position: relative;
+  transition: all .6s; }
+  #Select .e-Select.active {
+    border-color: #409eff; }
   #Select .e-Select input {
+    width: 100%;
     border: none;
     outline: 0;
     line-height: 36px;
     border-radius: 4px;
-    text-indent: 10px; }
+    text-indent: 10px;
+    padding-right: 20px; }
   #Select .e-Select .arrow {
     display: block;
     width: 8px;
@@ -528,7 +533,8 @@ main {
     position: absolute;
     top: 48px;
     z-index: 10;
-    background: #fff; }
+    background: #fff;
+    padding: 10px 0 !important; }
     #Select .e-Select ul:before {
       display: block;
       content: "";
@@ -538,6 +544,15 @@ main {
         border-left: 0;
         border-top: 0;
       background: #fff;
-      position: absolute; }
+      position: absolute;
+      top: -5px;
+      left: 30%;
+      transform: rotate(-135deg); }
+    #Select .e-Select ul li {
+      padding: 10px 0 10px 20px; }
+      #Select .e-Select ul li:last-child {
+        padding-bottom: 0; }
+      #Select .e-Select ul li:hover {
+        background: rgba(64, 158, 255, 0.1); }
 
 /*# sourceMappingURL=index.css.map */

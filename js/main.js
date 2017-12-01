@@ -18,5 +18,5 @@ requirejs(['jquery', 'app/NavGenerate','app/ModelRender','app/CodeGenerate','app
 
 requirejs(['jquery','app/formModel'],function($,formModel){
     formModel.InputNumber.init($(".e-inputNumber"),10)
-    formModel.Select.init($(".e-Select"))
+    formModel.Select.init($("#content .demo .case ul li:first-child"),$(".e-Select"),["黄金糕","双皮奶","龙须面","北京烤鸭"])
 });

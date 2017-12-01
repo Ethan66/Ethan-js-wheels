@@ -70,32 +70,69 @@ define(['jquery'],function($){
         }
     })()
     var Select=(function(){
-        var Select1=function($ct){
-            this.init($ct)
+        var Select1=function($parent,$ct,arr){
+            this.init($parent,$ct,arr)
             this.bind()
         }
         Select1.prototype={
-            init:function($ct){
+            init:function($parent,$ct,arr){
+                this.$parent=$parent
                 this.$ct=$ct
+                this.arr=arr
                 this.$arrow=$ct.find(".arrow")
+                this.$ul=$ct.find("ul")
+                this.show=false
 
             },
             bind:function(){
                 var self=this
-                self.render()
-                self.$ct.on("click",function(){
-
+                self.render(this.arr)
+                self.$ct.on("click",function(e){
+                    e.stopPropagation()
+                    self.show=self.show==false?true:false
+                    self.showOrHideUl(self.show)
+                })
+                $("body").on("click",function(){
+                    if(self.show){
+                        self.show=false
+                        self.showOrHideUl(self.show)
+                    }
+                })
+                self.$ct.on("click","ul li",function(){
+                    var value=$(this).text()
+                    self.$ct.find("input").val(value)
                 })
             },
-            render:function(){
-
+            render:function(arr){
+                /*
+                <ul class="none">
+                    <li>黄金糕</li>
+                    <li>双皮奶</li>
+                    <li>龙须面</li>
+                    <li>北京烤鸭</li>
+                </ul>
+                */
+                var html='<ul class="none">'
+                html+=arr.map(function(value,index){
+                    return '<li>'+value+'</li>'
+                }).join("")
+                html+='</ul>'
+                this.$parent.find("."+this.$ct.attr("class")).append(html)
+            },
+            showOrHideUl:function(show){
+                if(show){
+                    this.$ct.addClass("active")
+                    this.$ct.find("ul").slideDown().removeClass("none")
+                }
+                else {
+                    this.$ct.removeClass("active")
+                    this.$ct.find("ul").slideUp().addClass("none")
+                }
             }
         }
         return {
-            init: function($ct){
-                $ct.each(function(index,value){
-                    new Select1($(this))
-                })
+            init: function($parent,$ct,arr){
+                new Select1($parent,$ct,arr)
             }
         }
     })()
@@ -104,3 +141,4 @@ define(['jquery'],function($){
         Select:Select
     }
 })
+

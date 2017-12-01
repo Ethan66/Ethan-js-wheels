@@ -204,9 +204,13 @@
 
 #Select{
   .e-Select{
-    width: 200px; border: 1px solid #ddd; border-radius: 4px; position: relative;
+    width: 200px; border: 1px solid #ddd; border-radius: 4px; position: relative; transition: all .6s;
+    &.active{
+      border-color: $color;
+    }
     input{
-      border: none; outline: 0; line-height: 36px; border-radius: 4px; text-indent: 10px;
+      width: 100%; border: none; outline: 0; line-height: 36px; border-radius: 4px; text-indent: 10px;
+      padding-right: 20px;
     }
     .arrow{
       display: block; width: 8px; height: 8px; border: 1px solid #999 {left: 0; top: 0;} position: absolute; top: 11px; right: 11px;
@@ -214,10 +218,20 @@
     }
     ul{
       width: 100%; border: 1px solid #ddd; border-radius: 4px; position: absolute; top: 48px; z-index: 10; background: #fff;
+      padding: 10px 0 !important;
       &:before{
         display: block; content: ""; width: 10px; height: 10px; border: 1px solid #ddd {left: 0; top: 0;}
         background: #fff; 
-        position: absolute;
+        position: absolute; top: -5px; left: 30%; transform: rotate(-135deg);
+      }
+      li{
+        padding: 10px 0 10px 20px;
+        &:last-child{
+          padding-bottom: 0;
+        }
+        &:hover{
+          background: rgba(64,158,255,.1);
+        }
       }
     }
   }
