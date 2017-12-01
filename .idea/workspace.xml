@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="081b4b38-df5c-4479-a998-c959db8ddfb7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css.map" afterPath="$PROJECT_DIR$/css/index.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/formModel.js" afterPath="$PROJECT_DIR$/js/app/formModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scss/_form.scss" afterPath="$PROJECT_DIR$/scss/_form.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/index.html" afterPath="$PROJECT_DIR$/view/index.html" />
     </list>
@@ -22,14 +19,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="298" column="74" lean-forward="false" selection-start-line="298" selection-start-column="74" selection-end-line="298" selection-end-column="74" />
+            <state relative-caret-position="259">
+              <caret line="351" column="60" lean-forward="false" selection-start-line="351" selection-start-column="60" selection-end-line="351" selection-end-column="60" />
               <folding>
                 <element signature="e#6034#9003#0" expanded="false" />
                 <element signature="e#9014#11580#0" expanded="false" />
+                <element signature="n#div#2;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -55,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_form.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scss/_form.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="215" column="52" lean-forward="false" selection-start-line="215" selection-start-column="52" selection-end-line="215" selection-end-column="52" />
+            <state relative-caret-position="430">
+              <caret line="260" column="50" lean-forward="false" selection-start-line="260" selection-start-column="50" selection-end-line="260" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -68,10 +66,11 @@
       <file leaf-file-name="formModel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/app/formModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="101" column="42" lean-forward="false" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
+            <state relative-caret-position="76">
+              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
                 <element signature="e#80#2420#0" expanded="false" />
+                <element signature="e#2450#5096#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -139,8 +138,8 @@
         <option value="$PROJECT_DIR$/scss/index.scss" />
         <option value="$PROJECT_DIR$/js/app/formModel.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
-        <option value="$PROJECT_DIR$/scss/_form.scss" />
         <option value="$PROJECT_DIR$/view/index.html" />
+        <option value="$PROJECT_DIR$/scss/_form.scss" />
       </list>
     </option>
   </component>
@@ -257,12 +256,12 @@
       <workItem from="1512093462644" duration="5860000" />
       <workItem from="1512107155318" duration="482000" />
       <workItem from="1512107694646" duration="160000" />
-      <workItem from="1512107899941" duration="13246000" />
+      <workItem from="1512107899941" duration="15901000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46275000" />
+    <option name="totallyTimeSpent" value="48930000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="796" extended-state="0" />
@@ -356,6 +355,7 @@
           <folding>
             <element signature="e#6034#9003#0" expanded="false" />
             <element signature="e#9014#11580#0" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -417,6 +417,7 @@
           <folding>
             <element signature="e#6034#9003#0" expanded="false" />
             <element signature="e#9014#11580#0" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -478,6 +479,7 @@
           <folding>
             <element signature="e#6034#9003#0" expanded="false" />
             <element signature="e#9014#11580#0" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -539,6 +541,7 @@
           <folding>
             <element signature="e#6034#9003#0" expanded="false" />
             <element signature="e#9014#11580#0" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -568,6 +571,7 @@
           <folding>
             <element signature="e#6034#9003#0" expanded="false" />
             <element signature="e#9014#11580#0" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -597,6 +601,7 @@
           <folding>
             <element signature="e#6034#9003#0" expanded="false" />
             <element signature="e#9014#11580#0" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -626,6 +631,7 @@
           <folding>
             <element signature="e#6034#9003#0" expanded="false" />
             <element signature="e#9014#11580#0" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -718,30 +724,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app/formModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="101" column="42" lean-forward="false" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
+        <state relative-caret-position="76">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
             <element signature="e#80#2420#0" expanded="false" />
+            <element signature="e#2450#5096#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="351" column="60" lean-forward="false" selection-start-line="351" selection-start-column="60" selection-end-line="351" selection-end-column="60" />
+          <folding>
+            <element signature="e#6034#9003#0" expanded="false" />
+            <element signature="e#9014#11580#0" expanded="false" />
+            <element signature="n#div#2;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scss/_form.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="215" column="52" lean-forward="false" selection-start-line="215" selection-start-column="52" selection-end-line="215" selection-end-column="52" />
+        <state relative-caret-position="430">
+          <caret line="260" column="50" lean-forward="false" selection-start-line="260" selection-start-column="50" selection-end-line="260" selection-end-column="50" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="298" column="74" lean-forward="false" selection-start-line="298" selection-start-column="74" selection-end-line="298" selection-end-column="74" />
-          <folding>
-            <element signature="e#6034#9003#0" expanded="false" />
-            <element signature="e#9014#11580#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>

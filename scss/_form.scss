@@ -213,7 +213,7 @@
     }
     input{
       width: 100%; border: none; outline: 0; line-height: 36px; border-radius: 4px; text-indent: 10px;
-      padding-right: 20px; background: transparent; 
+      padding-right: 20px; background: transparent;
     }
     .arrow{
       display: block; width: 8px; height: 8px; border: 1px solid #999 {left: 0; top: 0;} position: absolute; top: 11px; right: 11px;
@@ -242,6 +242,27 @@
           }
         }
       }
+    }
+  }
+}
+#Switch{
+  .e-Switch{
+    position: relative;
+    input{
+      position: absolute; z-index: 2; opacity: 0;
+    }
+    input,.bigCircle{
+      width: 40px; height: 20px; border-radius: 10px;
+    }
+    .bigCircle{
+      display: inline-block; background: #ff4949;
+    }
+    input[checked=true]+.bigCircle{
+      display: inline-block; background: #13ce66; 
+    }
+    .circle{
+      display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: #fff; position: absolute;
+      top: 2px; left: 2px;
     }
   }
 }

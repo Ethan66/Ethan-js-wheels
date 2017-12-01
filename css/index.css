@@ -564,4 +564,30 @@ main {
           background: #fff;
           cursor: not-allowed; }
 
+#Switch .e-Switch {
+  position: relative; }
+  #Switch .e-Switch input {
+    position: absolute;
+    z-index: 2;
+    opacity: 0; }
+  #Switch .e-Switch input, #Switch .e-Switch .bigCircle {
+    width: 40px;
+    height: 20px;
+    border-radius: 10px; }
+  #Switch .e-Switch .bigCircle {
+    display: inline-block;
+    background: #ff4949; }
+  #Switch .e-Switch input[checked=true] + .bigCircle {
+    display: inline-block;
+    background: #13ce66; }
+  #Switch .e-Switch .circle {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 2px;
+    left: 2px; }
+
 /*# sourceMappingURL=index.css.map */
