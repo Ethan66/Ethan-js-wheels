@@ -70,17 +70,16 @@ define(['jquery'],function($){
         }
     })()
     var Select=(function(){
-        var Select1=function($parent,$ct,arr){
-            this.init($parent,$ct,arr)
+        var Select1=function($parent,className,arr){
+            this.init($parent,className,arr)
             this.bind()
         }
         Select1.prototype={
-            init:function($parent,$ct,arr){
+            init:function($parent,className,arr){
                 this.$parent=$parent
-                this.$ct=$ct
+                this.$ct=$parent.find("."+className)
                 this.arr=arr
-                this.$arrow=$ct.find(".arrow")
-                this.$ul=$ct.find("ul")
+                this.$arrow=this.$ct.find(".arrow")
                 this.show=false
 
             },
@@ -98,7 +97,11 @@ define(['jquery'],function($){
                         self.showOrHideUl(self.show)
                     }
                 })
-                self.$ct.on("click","ul li",function(){
+                self.$ct.on("click","ul li",function(e){
+                    if($(this).attr("disabled")){
+                        e.stopPropagation()
+                        return
+                    }
                     var value=$(this).text()
                     self.$ct.find("input").val(value)
                 })
@@ -114,7 +117,14 @@ define(['jquery'],function($){
                 */
                 var html='<ul class="none">'
                 html+=arr.map(function(value,index){
-                    return '<li>'+value+'</li>'
+                    for(var key in value){
+                        if(value[key]){
+                            return '<li>'+key+'</li>'
+                        }
+                        else {
+                            return '<li disabled>'+key+'</li>'
+                        }
+                    }
                 }).join("")
                 html+='</ul>'
                 this.$parent.find("."+this.$ct.attr("class")).append(html)
@@ -131,8 +141,8 @@ define(['jquery'],function($){
             }
         }
         return {
-            init: function($parent,$ct,arr){
-                new Select1($parent,$ct,arr)
+            init: function($parent,className,arr){
+                new Select1($parent,className,arr)
             }
         }
     })()

@@ -505,6 +505,9 @@ main {
   border-radius: 4px;
   position: relative;
   transition: all .6s; }
+  #Select .e-Select[disabled] {
+    cursor: not-allowed;
+    background: #f5f7fa; }
   #Select .e-Select.active {
     border-color: #409eff; }
   #Select .e-Select input {
@@ -514,7 +517,8 @@ main {
     line-height: 36px;
     border-radius: 4px;
     text-indent: 10px;
-    padding-right: 20px; }
+    padding-right: 20px;
+    background: transparent; }
   #Select .e-Select .arrow {
     display: block;
     width: 8px;
@@ -554,5 +558,10 @@ main {
         padding-bottom: 0; }
       #Select .e-Select ul li:hover {
         background: rgba(64, 158, 255, 0.1); }
+      #Select .e-Select ul li[disabled] {
+        color: #bbb; }
+        #Select .e-Select ul li[disabled]:hover {
+          background: #fff;
+          cursor: not-allowed; }
 
 /*# sourceMappingURL=index.css.map */
